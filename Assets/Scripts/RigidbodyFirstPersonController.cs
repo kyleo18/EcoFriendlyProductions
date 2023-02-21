@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             public float ForwardSpeed = 2.0f;   // Speed when walking forward
 
-            public float walkSpeed = 2.0f, runSpeed = 3.0f;
+            public float walkSpeed = 2.0f, runSpeed = 6.0f;
             //public float walkAirSpeed = 0.3f, runAirSpeed
 
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
