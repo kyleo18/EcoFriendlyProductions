@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
-    public float sobriety = 40f;
+    public float sobriety = 20f;
     public float timeToWithdrawal = 0.0f;
     public float timeToEndWithdrawal = 0.0f;
     public bool doWithdrawalEffects = false;
     public bool doneWithdrawalEffects = false;
     public int WithdrawalCounter = 0;
+    public Image slowicon;
+    public Image bluricon;
+    public HealthBar withdrawlTimer;
 
     public GameObject lastWall;
 
@@ -67,17 +71,20 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        slowicon.gameObject.SetActive(false);
+        bluricon.gameObject.SetActive(false);
         rbfps = GetComponent<RigidbodyFirstPersonController>();
         rb = GetComponent<Rigidbody>();
         blur = blurScreen.GetComponent<UIBlur>();
         blur.Multiplier = 0;
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        withdrawlTimer.SetMaxHealth(sobriety);
+        withdrawlTimer.SetHealth(timeToWithdrawal);
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
 
@@ -257,15 +264,17 @@ public class PlayerController : MonoBehaviour
             if (timeToEndWithdrawal <= 10.0f)
             {
                 //Effects
-                if (WithdrawalCounter % 3 == 1 && !doneWithdrawalEffects)
+                if (WithdrawalCounter % 2 == 1 && !doneWithdrawalEffects)
                 {
                     this.gameObject.SendMessage("Fatigue", true);
                     doneWithdrawalEffects = true;
+                    slowicon.gameObject.SetActive(true);
                 }
 
-                if (WithdrawalCounter % 3 == 2 && blur.Multiplier < 1)
+                if (WithdrawalCounter % 2 == 0 && blur.Multiplier < 1)
                 {
                     blur.Multiplier += .005f;
+                    bluricon.gameObject.SetActive(true);
                     //doneWithdrawalEffects = true;
                 }
 
@@ -276,14 +285,16 @@ public class PlayerController : MonoBehaviour
 
             if (timeToEndWithdrawal >= 10.0f || Input.GetKeyDown(KeyCode.F))
             {
-                if (WithdrawalCounter % 3 == 1)
+                if (WithdrawalCounter % 2 == 1)
                 {
                     this.gameObject.SendMessage("Fatigue", false);
+                    slowicon.gameObject.SetActive(false);
                 }
 
-                if (WithdrawalCounter % 3 == 2)
+                if (WithdrawalCounter % 2 == 0)
                 {
                     blur.Multiplier = 0;
+                    bluricon.gameObject.SetActive(false);
                 }
 
                 if (Input.GetKeyDown(KeyCode.F))
@@ -306,6 +317,6 @@ public class PlayerController : MonoBehaviour
 
 
     }
+ 
 
-  
 }

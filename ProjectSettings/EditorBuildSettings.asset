@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Main Menu.unity
+    guid: afbd144304bec554dbe5146a32b07727
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/SampleScene.unity
+    guid: 95857bb29d5fd3e41aae81c08d2070dc
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Level 2.unity
+    guid: c2021c1ec039b0444bf77957d7325c49
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/level 3.unity
+    guid: 5eb4af0d15f7b2d4da770568122d93ac
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Tutorial.unity
+    guid: aff04628f9c3a9f45acc01158a36b5d8
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Win.unity
+    guid: e8a485ebf74081f49aaf482fcf32c68a
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Die.unity
+    guid: dd6b797fddf8df84da7d02403b1abac1
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Story.unity
+    guid: 976b0649d9ba98345b537b7c7a92e9e5
   m_configObjects: {}
