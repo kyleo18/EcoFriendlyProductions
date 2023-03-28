@@ -61,6 +61,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         public bool Wallrunning;
+        public bool isWalking;
+        public bool isRunning;
+        public bool hasLanded;
 
 
 

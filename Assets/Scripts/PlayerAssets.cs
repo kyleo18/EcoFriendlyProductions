@@ -6,10 +6,16 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class PlayerAssets : MonoBehaviour
 {
+    PlayerController pc;
+
     int health;
     int maxhealth = 100;
     public TextMeshProUGUI healthText;
     public HealthBar healthBar;
+    public AudioSource walking;
+    public AudioSource running;
+    public AudioSource breathRunning;
+    public AudioSource breathWithdrawl;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,43 @@ public class PlayerAssets : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene(sceneBuildIndex: 6);
+        }
+
+        if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0)
+        {
+            walking.Play();
+            running.Stop();
+            breathRunning.Stop();
+            //if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0f && this.gameObject.GetComponent<Rigidbody>().velocity.magnitude < 6f)
+            //{
+            //    walking.Play();
+            //    running.Stop();
+            //    breathRunning.Stop();
+            //}
+
+                //else if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude >= 6f)
+                //{
+                //    walking.Stop();
+                //    running.Play();
+                //    breathRunning.Play();
+                //}
+
+            //else
+            //{
+            //    walking.Stop();
+            //    running.Stop();
+            //    breathRunning.Stop();
+            //}
+
+        }
+
+        if (pc.doWithdrawalEffects == true)
+        {
+            breathWithdrawl.Play();
+        }
+        else
+        {
+            breathWithdrawl.Stop();
         }
     }
     private void OnCollisionEnter(Collision collision)
