@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class PlayerAssets : MonoBehaviour
 {
-    PlayerController pc;
+    public PlayerController pc;
 
     int health;
     int maxhealth = 100;
