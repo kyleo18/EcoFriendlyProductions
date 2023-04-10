@@ -22,11 +22,13 @@ public class PlayerAssets : MonoBehaviour
     {
         health = maxhealth;
         healthBar.SetMaxHealth(maxhealth);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         healthText.SetText(health.ToString() + "/100");
         if (health <= 0)
         {
@@ -35,7 +37,8 @@ public class PlayerAssets : MonoBehaviour
 
         if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0)
         {
-            walking.Play();
+            //playWalk();
+
             running.Stop();
             breathRunning.Stop();
             //if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0f && this.gameObject.GetComponent<Rigidbody>().velocity.magnitude < 6f)
@@ -81,4 +84,18 @@ public class PlayerAssets : MonoBehaviour
         }
         
     }
+
+
+    private void playWalk()
+    {
+        Debug.Log("walk play");
+
+        
+        if (walking.isPlaying == false)
+        {
+            walking.Play();
+        }
+    }
+
+    
 }
