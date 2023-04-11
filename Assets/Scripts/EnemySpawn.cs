@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class EnemySpawn : MonoBehaviour
 {
     public float TimeLeft;
@@ -42,11 +43,12 @@ public class EnemySpawn : MonoBehaviour
                 Debug.Log("Time is up");
                 TimeLeft = 0;
                 TimerOn = false;
-                dr1.SetActive(true);
-                dr2.SetActive(true);
-                dr3.SetActive(true);
-                dr4.SetActive(true);
-                dr5.SetActive(true);
+                SceneManager.LoadScene(sceneBuildIndex: 6);
+                //dr1.SetActive(true);
+                //dr2.SetActive(true);
+                //dr3.SetActive(true);
+                //dr4.SetActive(true);
+                //dr5.SetActive(true);
             }
         }
     }
