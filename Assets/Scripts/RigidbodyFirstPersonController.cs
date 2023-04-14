@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
+        public PlayerController playerController;
         [Serializable]
         public class MovementSettings
         {
@@ -18,8 +19,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float SpeedInAir = 8.0f;   // Speed when onair
-            public float JumpForce = 30f;
-
+            public float JumpForce = 30f;            
             [HideInInspector] public float CurrentTargetSpeed = 8f;
             
 #if !MOBILE_INPUT
@@ -161,6 +161,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             inputVector = Vector3.ClampMagnitude(inputVector, 1);
 
             stopWalk();
+            playerController.Stopmoving();
 
             //grounded
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && m_IsGrounded && !Wallrunning)
@@ -168,25 +169,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (Input.GetAxisRaw("Vertical") > 0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.ForwardSpeed * Mathf.Abs(inputVector.z));
-
+                    playerController.moving();
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.BackwardSpeed * Mathf.Abs(inputVector.z));
-
+                    playerController.moving();
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
-
+                    playerController.moving();
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
-
+                    playerController.moving();
                     playWalk();
                 }
 
@@ -197,25 +198,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (Input.GetAxisRaw("Vertical") > 0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
-
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
-
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
-
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
-
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
 

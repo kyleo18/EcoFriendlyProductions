@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Image slowicon;
     public Image bluricon;
     public HealthBar withdrawlTimer;
+    public bool movingBuff = false;
 
     public GameObject lastWall;
 
@@ -250,7 +251,14 @@ public class PlayerController : MonoBehaviour
 
         //Withdrawal
         timeToWithdrawal += Time.deltaTime;
-
+        if (doWithdrawalEffects == true)
+        {
+            timeToWithdrawal = 0f;
+        }
+        if(doWithdrawalEffects == true && movingBuff == true)
+        {
+            timeToEndWithdrawal = 0f;
+        }
         if (timeToWithdrawal >= sobriety)
         {
             timeToWithdrawal = 0.0f;
@@ -277,10 +285,6 @@ public class PlayerController : MonoBehaviour
                     bluricon.gameObject.SetActive(true);
                     //doneWithdrawalEffects = true;
                 }
-
-
-
-
             }
 
             if (timeToEndWithdrawal >= 10.0f || Input.GetKeyDown(KeyCode.F))
@@ -305,18 +309,20 @@ public class PlayerController : MonoBehaviour
                 {
                     sobriety += 5;
                 }
-
-
                 timeToEndWithdrawal = 0;
                 doneWithdrawalEffects = false;
                 doWithdrawalEffects = false;
-
-
             }
         }
 
 
     }
- 
-
+    public void moving()
+    {
+        movingBuff = true;
+    }
+    public void Stopmoving()
+    {
+        movingBuff = false;
+    }
 }

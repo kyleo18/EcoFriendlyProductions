@@ -37,11 +37,11 @@ public class Drone : MonoBehaviour
         if(distance <= 15)
         {
             rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 10) / 50, 0f, 1f) * thrust);
-            dr1.SetActive(true);
-            dr2.SetActive(true);
-            dr3.SetActive(true);
-            dr4.SetActive(true);
-            dr5.SetActive(true);
+            //dr1.SetActive(true);
+            //dr2.SetActive(true);
+            //dr3.SetActive(true);
+            //dr4.SetActive(true);
+            //dr5.SetActive(true);
         }
         //rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 10) / 50, 0f, 1f) * thrust);
     }
