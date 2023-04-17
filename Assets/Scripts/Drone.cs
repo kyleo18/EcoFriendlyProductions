@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Drone : MonoBehaviour
 {   
     private float thrust = 40f;
     private Rigidbody rb;
     public Transform player;
-    public GameObject dr1;
-    public GameObject dr2;
-    public GameObject dr3;
-    public GameObject dr4;
-    public GameObject dr5;
     public Image marker;
 
     private void Start()
@@ -23,7 +19,6 @@ public class Drone : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.LookAt(player);
         Vector3 targetLocation = player.position - transform.position;
         float distance = targetLocation.magnitude;
         if(distance > 30)
@@ -33,16 +28,16 @@ public class Drone : MonoBehaviour
         if(distance <= 30)
         {
             marker.gameObject.SetActive(true);
-        }
-        if(distance <= 15)
+        }       
+        if(distance <= 20)
         {
-            rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 10) / 50, 0f, 1f) * thrust);
-            //dr1.SetActive(true);
-            //dr2.SetActive(true);
-            //dr3.SetActive(true);
-            //dr4.SetActive(true);
-            //dr5.SetActive(true);
+            SceneManager.LoadScene(sceneBuildIndex: 6);
         }
-        //rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 10) / 50, 0f, 1f) * thrust);
+    }
+    void OnDrawGizmosSelected()
+    {
+        // Display the explosion radius when selected
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, 15f);
     }
 }
