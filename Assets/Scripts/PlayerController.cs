@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     public float sobriety = 20f;
     public float timeToWithdrawal = 0.0f;
     public float timeToEndWithdrawal = 0.0f;
+    public float timeToSmoke = 0.0f;
+    public float timeBoost = 0.0f;
+    public bool boost = false;
+    public bool smoke = false;
     public bool doWithdrawalEffects = false;
     public bool doneWithdrawalEffects = false;
     public int WithdrawalCounter = 0;
@@ -265,7 +269,6 @@ public class PlayerController : MonoBehaviour
             doWithdrawalEffects = true;
             WithdrawalCounter++;
         }
-
         if (doWithdrawalEffects)
         {
             timeToEndWithdrawal += Time.deltaTime;
@@ -286,25 +289,18 @@ public class PlayerController : MonoBehaviour
                     //doneWithdrawalEffects = true;
                 }
             }
-
-            if (timeToEndWithdrawal >= 10.0f || Input.GetKeyDown(KeyCode.F))
+            if (timeToEndWithdrawal >= 10.0f)
             {
                 if (WithdrawalCounter % 2 == 1)
                 {
                     this.gameObject.SendMessage("Fatigue", false);
                     slowicon.gameObject.SetActive(false);
                 }
-
                 if (WithdrawalCounter % 2 == 0)
                 {
                     blur.Multiplier = 0;
                     bluricon.gameObject.SetActive(false);
-                }
-
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    sobriety -= 5;
-                }
+                }                
                 if (timeToEndWithdrawal >= 10.0f)
                 {
                     sobriety += 5;
@@ -313,16 +309,56 @@ public class PlayerController : MonoBehaviour
                 doneWithdrawalEffects = false;
                 doWithdrawalEffects = false;
             }
+            if (timeToEndWithdrawal >= 10.0f || Input.GetKeyDown(KeyCode.F))
+            {
+                smoke = true;                                         
+            }
+            if (timeToSmoke > 3f)
+            {
+                if (sobriety > 5)
+                {
+                    if (WithdrawalCounter % 2 == 1)
+                    {
+                        this.gameObject.SendMessage("Fatigue", false);
+                        slowicon.gameObject.SetActive(false);
+                    }
+
+                    if (WithdrawalCounter % 2 == 0)
+                    {
+                        blur.Multiplier = 0;
+                        bluricon.gameObject.SetActive(false);
+                    }
+                    boost = true;
+                    this.gameObject.SendMessage("boost", true);
+                    sobriety -= 5;
+                    timeToEndWithdrawal = 0;
+                    doneWithdrawalEffects = false;
+                    doWithdrawalEffects = false;
+                }
+            }
+        }       
+        if(boost)
+        {            
+            timeBoost += Time.deltaTime;           
+            if (timeBoost > 5f)
+            {
+                boost = false;
+                this.gameObject.SendMessage("boost", false);
+                timeBoost = 0.0f;
+            }
         }
-
-
     }
     public void moving()
     {
         movingBuff = true;
+        timeToSmoke = 0f;
     }
     public void Stopmoving()
     {
         movingBuff = false;
+        if(doWithdrawalEffects && smoke)
+        {
+            timeToSmoke += Time.deltaTime;
+        }        
     }
 }

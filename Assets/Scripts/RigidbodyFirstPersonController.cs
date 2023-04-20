@@ -307,7 +307,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void Fatigue(bool startStop)
         {
-
             if (startStop)
             {
                 movementSettings.runSpeed /= 2;
@@ -317,10 +316,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 movementSettings.runSpeed *= 2;
                 movementSettings.walkSpeed *= 2;
+            }           
+            movementSettings.ForwardSpeed = movementSettings.runSpeed;
+            movementSettings.ForwardSpeed = movementSettings.walkSpeed;
+        }
+        public void boost(bool startStop)
+        {
+            if (startStop)
+            {
+                movementSettings.runSpeed *= 1.5f;
+                movementSettings.walkSpeed *= 1.5f;
             }
-            
-
-
+            if (!startStop)
+            {
+                movementSettings.runSpeed /= 1.5f;
+                movementSettings.walkSpeed /= 1.5f;
+            }
             movementSettings.ForwardSpeed = movementSettings.runSpeed;
             movementSettings.ForwardSpeed = movementSettings.walkSpeed;
         }
