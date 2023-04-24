@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float sobriety = 20f;
@@ -360,5 +361,16 @@ public class PlayerController : MonoBehaviour
         {
             timeToSmoke += Time.deltaTime;
         }        
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "limit")
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 2);
+        }
+        if (collision.gameObject.tag == "Finish")
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 5);
+        }
     }
 }

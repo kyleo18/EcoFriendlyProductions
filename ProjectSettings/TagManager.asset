@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Intel
   - enemy
+  - limit
   layers:
   - Default
   - TransparentFX

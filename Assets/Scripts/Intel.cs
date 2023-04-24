@@ -56,9 +56,9 @@ public class Intel : MonoBehaviour
             intel += 1;
             Destroy(collision.gameObject);
         }
-        if(collision.gameObject.tag == "Finish" && intel == 3)
-        {
-            SceneManager.LoadScene(sceneBuildIndex: 5);
-        }
+        //if(collision.gameObject.tag == "Finish" && intel == 3)
+        //{
+        //    SceneManager.LoadScene(sceneBuildIndex: 5);
+        //}
     }
 }
