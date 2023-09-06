@@ -8,32 +8,17 @@ public class PlayerAssets : MonoBehaviour
 {
     public PlayerController pc;
 
-    int health;
-    int maxhealth = 100;
-    public TextMeshProUGUI healthText;
-    public HealthBar healthBar;
     public AudioSource walking;
     public AudioSource running;
     public AudioSource breathRunning;
     public AudioSource breathWithdrawl;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = maxhealth;
-        healthBar.SetMaxHealth(maxhealth);
-
-    }
 
     // Update is called once per frame
     void Update()
     {
 
-        healthText.SetText(health.ToString() + "/100");
-        if (health <= 0)
-        {
-            SceneManager.LoadScene(sceneBuildIndex: 6);
-        }
+            //SceneManager.LoadScene(sceneBuildIndex: 6);
+
 
         if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0)
         {
@@ -78,9 +63,8 @@ public class PlayerAssets : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             Debug.Log("yepI");
-            health -= 20;
             Destroy(collision.gameObject);
-            healthBar.SetHealth(health);
+
         }
         
     }

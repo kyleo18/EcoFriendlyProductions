@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public int WithdrawalCounter = 0;
     public Image slowicon;
     public Image bluricon;
-    public HealthBar withdrawlTimer;
     public bool movingBuff = false;
 
     public GameObject lastWall;
@@ -89,8 +88,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        withdrawlTimer.SetMaxHealth(sobriety);
-        withdrawlTimer.SetHealth(timeToWithdrawal);
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
 
