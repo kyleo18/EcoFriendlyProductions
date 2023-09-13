@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject blurScreen;
     private UIBlur blur;
-
+    public Animator animator;
 
 
     private RigidbodyFirstPersonController rbfps;
@@ -83,7 +83,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         blur = blurScreen.GetComponent<UIBlur>();
         blur.Multiplier = 0;
-       
+        animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -127,7 +128,7 @@ public class PlayerController : MonoBehaviour
             IsParkour = true;
             chosenParkourMoveTime = VaultTime;
 
-            cameraAnimator.CrossFade("Vault",0.1f);
+            //cameraAnimator.CrossFade("Vault",0.1f);
         }
 
         //climb
@@ -310,7 +311,7 @@ public class PlayerController : MonoBehaviour
                 doneWithdrawalEffects = false;
                 doWithdrawalEffects = false;
             }
-            if (timeToEndWithdrawal >= 10.0f || Input.GetKeyDown(KeyCode.F))
+            if (timeToEndWithdrawal <= 10.0f && Input.GetKeyDown(KeyCode.F))
             {
                 smoke = true;                                         
             }
@@ -335,6 +336,7 @@ public class PlayerController : MonoBehaviour
                     timeToEndWithdrawal = 0;
                     doneWithdrawalEffects = false;
                     doWithdrawalEffects = false;
+                    smoke = false;
                 }
             }
         }       
@@ -353,6 +355,19 @@ public class PlayerController : MonoBehaviour
     {
         movingBuff = true;
         timeToSmoke = 0f;
+        animator.ResetTrigger("idle");
+        animator.SetTrigger("walking2");
+       
+    }
+    public void sprinting()
+    {
+        animator.ResetTrigger("idle");
+        animator.ResetTrigger("walking2");
+        animator.SetTrigger("sprint");
+    }
+    public void jump()
+    {       
+        animator.SetTrigger("Jump");
     }
     public void Stopmoving()
     {
@@ -360,7 +375,10 @@ public class PlayerController : MonoBehaviour
         if(doWithdrawalEffects && smoke)
         {
             timeToSmoke += Time.deltaTime;
-        }        
+        }
+        animator.ResetTrigger("walking2");
+        animator.SetTrigger("idle");
+
     }
     void OnCollisionEnter(Collision collision)
     {
