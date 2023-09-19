@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
     public GameObject blurScreen;
     private UIBlur blur;
 
+    public GameObject currCheckpoint;
 
 
     private RigidbodyFirstPersonController rbfps;
@@ -363,11 +364,24 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "limit")
         {
-            SceneManager.LoadScene(sceneBuildIndex: 2);
+            //SceneManager.LoadScene(sceneBuildIndex: 2);
+            transform.position = currCheckpoint.transform.position;
         }
         if (collision.gameObject.tag == "Finish")
         {
             SceneManager.LoadScene(sceneBuildIndex: 5);
+        }
+
+
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Checkpoint")
+        {
+            
+            currCheckpoint = collider.gameObject;
+            collider.gameObject.GetComponentInChildren<Renderer>().enabled = false;
         }
     }
 }
