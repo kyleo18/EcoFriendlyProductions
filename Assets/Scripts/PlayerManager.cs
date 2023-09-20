@@ -10,4 +10,6 @@ public class PlayerManager : MonoBehaviour
         instance = this;
     }
     public GameObject player;
+
+    //public bool controlerConnected;
 }

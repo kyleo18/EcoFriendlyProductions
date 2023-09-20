@@ -91,8 +91,35 @@ namespace UnityStandardAssets.Characters.FirstPerson
             get { return m_IsGrounded; }
         }
 
-        
 
+        GamepadControls controls;
+
+        Vector2 gamepadMoveVec2;
+
+        bool connected = false;
+        IEnumerator CheckForControllers()
+        {
+            while (true)
+            {
+                string[] controllers = Input.GetJoystickNames();
+
+                if (connected == false && controllers.Length > 0)
+                {
+                    connected = true;
+                    controls.Player.Enable();
+                    Debug.Log("Connected");
+
+                }
+                else if (connected && controllers.Length == 0)
+                {
+                    connected = false;
+                    controls.Player.Disable();
+                    Debug.Log("Disconnected");
+                }
+
+                yield return new WaitForSeconds(1f);
+            }
+        }
 
         private void Awake()
         {
@@ -101,6 +128,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
+
+
+            controls = new GamepadControls();
+
+            StartCoroutine(CheckForControllers());            
+
+            controls.Player.Sprint.performed += ctx => controllerSprinting();
+
+            controls.Player.Jump.performed += ctx => controllerJump();
+
+            controls.Player.Move.performed += vec => gamepadMoveVec2 = vec.ReadValue<Vector2>();
+            controls.Player.Move.canceled += vec => gamepadMoveVec2 = Vector2.zero;
         }
 
 
@@ -138,6 +177,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         }
 
+        void controllerSprinting()
+        {
+            if(sprinting == false)
+            {
+                movementSettings.ForwardSpeed = movementSettings.runSpeed;
+                playerController.sprinting();
+                sprinting = true;
+            }
+            else
+            {
+                movementSettings.ForwardSpeed = movementSettings.walkSpeed;
+                sprinting = false;
+            }
+        }
+        void controllerJump()
+        {
+            if(m_IsGrounded)
+            {
+                NormalJump();
+                playerController.jump();
+            }
+        }
+        
+
 
         private void LateUpdate()
         {
@@ -165,7 +228,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             GroundCheck();
-            Vector2 input = GetInput();
+
+            Vector2 input;
+            if (controls.Player.enabled == true)
+            {
+                input = gamepadMoveVec2;
+            }
+            else
+            {
+                input = GetInput();
+            }
 
             float h = input.x;
             float v = input.y;
