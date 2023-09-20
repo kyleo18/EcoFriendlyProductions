@@ -388,6 +388,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Finish")
         {
+            Debug.Log("yep");
             SceneManager.LoadScene(sceneBuildIndex: 5);
         }
     }

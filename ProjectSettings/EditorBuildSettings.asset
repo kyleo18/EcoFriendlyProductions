@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Downloaded Assets/building assets/Scenes/Level 2.unity
     guid: c2021c1ec039b0444bf77957d7325c49
   - enabled: 1
-    path: Assets/Downloaded Assets/building assets/Scenes/level 3.unity
+    path: Assets/Downloaded Assets/building assets/Scenes/Select.unity
     guid: 5eb4af0d15f7b2d4da770568122d93ac
   - enabled: 1
     path: Assets/Downloaded Assets/building assets/Scenes/Tutorial.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Downloaded Assets/building assets/Scenes/Story.unity
     guid: 976b0649d9ba98345b537b7c7a92e9e5
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Cargo level.unity
+    guid: 3eb0074cce1f5eb4e9cfa140fdc9bcd4
   m_configObjects: {}
