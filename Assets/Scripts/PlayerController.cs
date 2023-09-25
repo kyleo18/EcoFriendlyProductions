@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public int WithdrawalCounter = 0;
     public Image slowicon;
     public Image bluricon;
-    public HealthBar withdrawlTimer;
     public bool movingBuff = false;
 
     public GameObject lastWall;
@@ -69,6 +68,7 @@ public class PlayerController : MonoBehaviour
     private UIBlur blur;
     public Animator animator;
 
+    public GameObject currCheckpoint;
 
     private RigidbodyFirstPersonController rbfps;
     private Rigidbody rb;
@@ -90,8 +90,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        withdrawlTimer.SetMaxHealth(sobriety);
-        withdrawlTimer.SetHealth(timeToWithdrawal);
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
 
@@ -384,12 +382,25 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "limit")
         {
-            SceneManager.LoadScene(sceneBuildIndex: 2);
+            //SceneManager.LoadScene(sceneBuildIndex: 2);
+            transform.position = currCheckpoint.transform.position;
         }
         if (collision.gameObject.tag == "Finish")
         {
             Debug.Log("yep");
             SceneManager.LoadScene(sceneBuildIndex: 5);
+        }
+
+
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Checkpoint")
+        {
+            
+            currCheckpoint = collider.gameObject;
+            collider.gameObject.GetComponentInChildren<Renderer>().enabled = false;
         }
     }
 }
