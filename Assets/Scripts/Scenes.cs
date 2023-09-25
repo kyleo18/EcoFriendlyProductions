@@ -43,4 +43,8 @@ public class Scenes : MonoBehaviour
     {
         SceneManager.LoadScene(sceneBuildIndex: 7);
     }
+    public void Options()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 9);
+    }
 }
