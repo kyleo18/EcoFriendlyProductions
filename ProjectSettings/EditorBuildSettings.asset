@@ -29,9 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Downloaded Assets/building assets/Scenes/Story.unity
     guid: 976b0649d9ba98345b537b7c7a92e9e5
-  - enabled: 1
-    path: Assets/Downloaded Assets/building assets/Scenes/Cargo level.unity
-    guid: 3eb0074cce1f5eb4e9cfa140fdc9bcd4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Downloaded Assets/building assets/Scenes/Options.unity
     guid: 1d08c8acd1764674ab6bf331ecb79e24

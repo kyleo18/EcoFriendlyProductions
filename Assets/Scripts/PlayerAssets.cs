@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerAssets : MonoBehaviour
 {
     public PlayerController pc;
-
+    int health;
+    int maxhealth = 100;
     public AudioSource walking;
     public AudioSource running;
     public AudioSource breathRunning;
@@ -17,7 +18,7 @@ public class PlayerAssets : MonoBehaviour
     void Start()
     {
         health = maxhealth;
-        healthBar.SetMaxHealth(maxhealth);
+        //healthBar.SetMaxHealth(maxhealth);
 
     }
 
@@ -25,7 +26,7 @@ public class PlayerAssets : MonoBehaviour
     void Update()
     {
 
-        healthText.SetText(health.ToString() + "/100");
+        //healthText.SetText(health.ToString() + "/100");
         if (health <= 0)
         {
             SceneManager.LoadScene(sceneBuildIndex: 6);

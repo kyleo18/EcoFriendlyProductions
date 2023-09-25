@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Image slowicon;
     public Image bluricon;
     public bool movingBuff = false;
+    public Slider progress;
 
     public GameObject lastWall;
 
@@ -92,7 +93,8 @@ public class PlayerController : MonoBehaviour
     {
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
-
+        progress.maxValue = sobriety;
+        progress.value = timeToWithdrawal;
 
         if (rbfps.Grounded)
         {
@@ -400,6 +402,7 @@ public class PlayerController : MonoBehaviour
         {
             
             currCheckpoint = collider.gameObject;
+            collider.enabled = false;
             collider.gameObject.GetComponentInChildren<Renderer>().enabled = false;
         }
     }
