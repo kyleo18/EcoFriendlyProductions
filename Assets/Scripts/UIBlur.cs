@@ -115,7 +115,7 @@ namespace Krivodeling.UI.Effects
 
         private void UpdateMultiplier()
         {
-            _material.SetFloat(_multiplierId, Multiplier);
+           // _material.SetFloat(_multiplierId, Multiplier);
         }
 
         private void UpdateFlipMode()
