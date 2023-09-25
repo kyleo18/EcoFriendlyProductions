@@ -12,13 +12,24 @@ public class PlayerAssets : MonoBehaviour
     public AudioSource running;
     public AudioSource breathRunning;
     public AudioSource breathWithdrawl;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        health = maxhealth;
+        healthBar.SetMaxHealth(maxhealth);
+
+    }
 
     // Update is called once per frame
     void Update()
     {
 
-            //SceneManager.LoadScene(sceneBuildIndex: 6);
-
+        healthText.SetText(health.ToString() + "/100");
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 6);
+        }
 
         if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0)
         {

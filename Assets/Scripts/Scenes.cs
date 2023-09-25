@@ -17,13 +17,13 @@ public class Scenes : MonoBehaviour
     }
     public void Level1()
     {
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        SceneManager.LoadScene(sceneBuildIndex: 8);
     }
     public void Level2()
     {
         SceneManager.LoadScene(sceneBuildIndex: 2);
     }
-    public void level3()
+    public void Select()
     {
         SceneManager.LoadScene(sceneBuildIndex: 3);
     }

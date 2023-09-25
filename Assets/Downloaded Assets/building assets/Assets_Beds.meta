@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Downloaded Assets/building assets/Assets_Beds.meta
 guid: 7548faed333a0654d9a4eba1452c1ebe
 folderAsset: yes
+========
+guid: 3eb0074cce1f5eb4e9cfa140fdc9bcd4
+>>>>>>>> upstream/main:Assets/Downloaded Assets/building assets/Scenes/Cargo level.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
