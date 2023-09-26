@@ -17,7 +17,7 @@ public class Scenes : MonoBehaviour
     }
     public void Level1()
     {
-        SceneManager.LoadScene(sceneBuildIndex: 8);
+        SceneManager.LoadScene(sceneBuildIndex: 9);
     }
     public void Level2()
     {
@@ -45,6 +45,6 @@ public class Scenes : MonoBehaviour
     }
     public void Options()
     {
-        SceneManager.LoadScene(sceneBuildIndex: 9);
+        SceneManager.LoadScene(sceneBuildIndex: 8);
     }
 }

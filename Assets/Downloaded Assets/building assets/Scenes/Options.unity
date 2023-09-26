@@ -450,8 +450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b83f8f83048bb84287642071b782c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1717328357}
-  mouseSensitivity: 100
   masterMixer: {fileID: 24100000, guid: 4d23e13142900584193cfe6d1e8f7f85, type: 2}
 --- !u!114 &144395190
 MonoBehaviour:
@@ -1549,17 +1547,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3611000301231008548, guid: ab819c2082edaac49a323828910bdb61, type: 3}
   m_PrefabInstance: {fileID: 1717328355}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1717328357 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3611000301231008549, guid: ab819c2082edaac49a323828910bdb61, type: 3}
-  m_PrefabInstance: {fileID: 1717328355}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1756180392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,7 +1717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 183}
+  m_AnchoredPosition: {x: 0, y: 180}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045450625
