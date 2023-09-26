@@ -5,8 +5,11 @@ using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class PlayerController : MonoBehaviour
 {
+    public float timer;
+    public TextMeshProUGUI timerText;
     public float sobriety = 20f;
     public float timeToWithdrawal = 0.0f;
     public float timeToEndWithdrawal = 0.0f;
@@ -85,7 +88,7 @@ public class PlayerController : MonoBehaviour
         blur = blurScreen.GetComponent<UIBlur>();
         blur.Multiplier = 0;
         animator = GetComponent<Animator>();
-
+        timer = 420f;
     }
 
     // Update is called once per frame
@@ -95,6 +98,15 @@ public class PlayerController : MonoBehaviour
         canwallrun = true;
         progress.maxValue = sobriety;
         progress.value = timeToWithdrawal;
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+            updateTimer(timer);
+        }
+        else if (timer <= 0)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 6);
+        }
 
         if (rbfps.Grounded)
         {
@@ -350,6 +362,13 @@ public class PlayerController : MonoBehaviour
                 timeBoost = 0.0f;
             }
         }
+    }
+    public void updateTimer (float currentTime)
+    {
+        currentTime += 1;
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+        timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
     public void moving()
     {
