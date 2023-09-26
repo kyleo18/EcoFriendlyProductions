@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         slowicon.gameObject.SetActive(false);
         bluricon.gameObject.SetActive(false);
+        blurScreen.gameObject.SetActive(false);
         rbfps = GetComponent<RigidbodyFirstPersonController>();
         rb = GetComponent<Rigidbody>();
         blur = blurScreen.GetComponent<UIBlur>();
@@ -298,7 +299,8 @@ public class PlayerController : MonoBehaviour
 
                 if (WithdrawalCounter % 2 == 0 && blur.Multiplier < 1)
                 {
-                    blur.Multiplier += .005f;
+                    //blur.Multiplier += .005f;
+                    blurScreen.gameObject.SetActive(true);
                     bluricon.gameObject.SetActive(true);
                     //doneWithdrawalEffects = true;
                 }
@@ -313,6 +315,7 @@ public class PlayerController : MonoBehaviour
                 if (WithdrawalCounter % 2 == 0)
                 {
                     blur.Multiplier = 0;
+                    blurScreen.gameObject.SetActive(false);
                     bluricon.gameObject.SetActive(false);
                 }                
                 if (timeToEndWithdrawal >= 10.0f)
