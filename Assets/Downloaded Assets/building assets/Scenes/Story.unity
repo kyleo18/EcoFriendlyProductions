@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1207,12 +1207,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Set in 2067 the megacorportation X-Corp has disposed of world governments
-    and owns the worldwide means to production. Due to be unregulated X-Corp has
-    taken to begun to pollute the planet at a rate that will eradicate life within
-    a decade. The player is part of the group known as running for future or RFF
-    who seeks to take down X-Corp and help to reestablish world government and correct
-    the pollution damages.
+  m_text: You play as a man named Blake who has been a smoker for most of his life.
+    Blake has recently decided to try and quit smoking but is experiencing withdrawls
+    even in his sleep. The game takes place in Blake's dreams where he battles against
+    withrdawls and their symptoms while engaging in various parkour adventures. When
+    Blake wakes he realizes that it was all a dream but feels he is making progress
+    in his efforts to quit smoking.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a9f7a6b248b2994983efc32ad59becf, type: 2}
   m_sharedMaterial: {fileID: -7583322294208061270, guid: 0a9f7a6b248b2994983efc32ad59becf, type: 2}

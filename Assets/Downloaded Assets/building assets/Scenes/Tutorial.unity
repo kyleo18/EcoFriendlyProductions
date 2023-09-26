@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -420,8 +420,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health Bar top right corner. Timer top middle. Intel collection top right.
-    Drone proximity warning right side. Withdrawal debuffs under health bar.
+  m_text: Withdrawl timer top left, once full will give you a debuff. Timer top middle. 
+    Withdrawal debuffs under withdrawl bar.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a9f7a6b248b2994983efc32ad59becf, type: 2}
   m_sharedMaterial: {fileID: -7583322294208061270, guid: 0a9f7a6b248b2994983efc32ad59becf, type: 2}
@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect 3/3 Intel to unlock extraction. Avoid enemy drones to prevent detection.
+  m_text: Reach the end of the level before the timer runs out to wake you up.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a9f7a6b248b2994983efc32ad59becf, type: 2}
   m_sharedMaterial: {fileID: -7583322294208061270, guid: 0a9f7a6b248b2994983efc32ad59becf, type: 2}
