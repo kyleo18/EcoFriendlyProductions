@@ -22,7 +22,7 @@ public class PopupText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (popMode == 0)
+        if (popMode == 1)
         {
             Invoke("AddPopUp", timeAdd);
         }

@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class PlayerController : MonoBehaviour
 {
+
     public float timer;
     public TextMeshProUGUI timerText;
     public float sobriety = 20f;
@@ -74,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject currCheckpoint;
 
+
+
     private RigidbodyFirstPersonController rbfps;
     private Rigidbody rb;
     private Vector3 RecordedMoveToPosition; //the position of the vault end point in world space to move the player to
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         blur.Multiplier = 0;
         animator = GetComponent<Animator>();
         timer = 420f;
+
     }
 
     // Update is called once per frame
@@ -97,17 +101,8 @@ public class PlayerController : MonoBehaviour
     {
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
-        progress.maxValue = sobriety;
-        progress.value = timeToWithdrawal;
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime;
-            updateTimer(timer);
-        }
-        else if (timer <= 0)
-        {
-            SceneManager.LoadScene(sceneBuildIndex: 6);
-        }
+
+
 
         if (rbfps.Grounded)
         {
@@ -141,7 +136,7 @@ public class PlayerController : MonoBehaviour
             IsParkour = true;
             chosenParkourMoveTime = VaultTime;
 
-            //cameraAnimator.CrossFade("Vault",0.1f);
+            cameraAnimator.CrossFade("Vault", 0.1f);
         }
 
         //climb
@@ -299,8 +294,7 @@ public class PlayerController : MonoBehaviour
 
                 if (WithdrawalCounter % 2 == 0 && blur.Multiplier < 1)
                 {
-                    //blur.Multiplier += .005f;
-                    blurScreen.gameObject.SetActive(true);
+                    blur.Multiplier += .005f;
                     bluricon.gameObject.SetActive(true);
                     //doneWithdrawalEffects = true;
                 }
@@ -366,7 +360,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    public void updateTimer(float currentTime)
+
+        public void updateTimer(float currentTime)
     {
         currentTime += 1;
         float minutes = Mathf.FloorToInt(currentTime / 60);
@@ -377,19 +372,6 @@ public class PlayerController : MonoBehaviour
     {
         movingBuff = true;
         timeToSmoke = 0f;
-        animator.ResetTrigger("idle");
-        animator.SetTrigger("walking2");
-
-    }
-    public void sprinting()
-    {
-        animator.ResetTrigger("idle");
-        animator.ResetTrigger("walking2");
-        animator.SetTrigger("sprint");
-    }
-    public void jump()
-    {
-        animator.SetTrigger("Jump");
     }
     public void Stopmoving()
     {
@@ -398,9 +380,6 @@ public class PlayerController : MonoBehaviour
         {
             timeToSmoke += Time.deltaTime;
         }
-        animator.ResetTrigger("walking2");
-        animator.SetTrigger("idle");
-
     }
     void OnCollisionEnter(Collision collision)
     {
