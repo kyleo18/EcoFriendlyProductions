@@ -9,6 +9,7 @@ TagManager:
   - limit
   - Enemy
   - Checkpoint
+  - bouncePad
   layers:
   - Default
   - TransparentFX
