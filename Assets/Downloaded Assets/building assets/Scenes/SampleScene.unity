@@ -496,6 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1b05793d3a93e438a16878e35ecc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  timerText: {fileID: 0}
   sobriety: 20
   timeToWithdrawal: 0
   timeToEndWithdrawal: 0
@@ -509,6 +511,7 @@ MonoBehaviour:
   slowicon: {fileID: 838762346}
   bluricon: {fileID: 2064804552}
   movingBuff: 0
+  progress: {fileID: 0}
   lastWall: {fileID: 0}
   drag_grounded: 5
   drag_inair: 0.2
@@ -533,6 +536,8 @@ MonoBehaviour:
   ClimbTime: 0.6
   ClimbEndPoint: {fileID: 222458662}
   blurScreen: {fileID: 360887492}
+  animator: {fileID: 0}
+  currCheckpoint: {fileID: 0}
 --- !u!114 &87156997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +578,9 @@ MonoBehaviour:
   isWalking: 0
   isRunning: 0
   hasLanded: 0
+  sprinting: 0
+  m_RigidBody: {fileID: 0}
+  m_Capsule: {fileID: 0}
   walking: {fileID: 87157007}
 --- !u!54 &87156998
 Rigidbody:
@@ -2727,7 +2735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 87157001}
-  marker: {fileID: 1687439160}
 --- !u!136 &391507914
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4227,7 +4234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 87157001}
-  marker: {fileID: 1933592628}
 --- !u!136 &592156408
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4410,7 +4416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 87157001}
-  marker: {fileID: 573535370}
 --- !u!195 &605537581
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8284,7 +8289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 87157001}
-  marker: {fileID: 64461617}
 --- !u!136 &1227895373
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10809,7 +10813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 87157001}
-  marker: {fileID: 557761260}
 --- !u!136 &1718319562
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12288,7 +12291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 87157001}
-  marker: {fileID: 564490542}
 --- !u!136 &1948829668
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12430,7 +12432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2013398344
 Transform:
   m_ObjectHideFlags: 0

@@ -10,12 +10,12 @@ public class Drone : MonoBehaviour
     private float thrust = 40f;
     private Rigidbody rb;
     public Transform player;
-    public Image marker;
+    //public Image marker;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        marker.gameObject.SetActive(false);
+        //marker.gameObject.SetActive(false);
     }
     private void FixedUpdate()
     {
@@ -23,15 +23,15 @@ public class Drone : MonoBehaviour
         float distance = targetLocation.magnitude;
         if(distance > 30)
         {
-            marker.gameObject.SetActive(false);
+            //marker.gameObject.SetActive(false);
         }
         if(distance <= 30)
         {
-            marker.gameObject.SetActive(true);
+            //marker.gameObject.SetActive(true);
         }       
         if(distance <= 20)
         {
-            SceneManager.LoadScene(sceneBuildIndex: 6);
+            //SceneManager.LoadScene(sceneBuildIndex: 6);
         }
     }
     void OnDrawGizmosSelected()

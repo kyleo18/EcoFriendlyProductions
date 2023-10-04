@@ -9,6 +9,7 @@ TagManager:
   - limit
   - Enemy
   - Checkpoint
+  - creaturecollider
   layers:
   - Default
   - TransparentFX
