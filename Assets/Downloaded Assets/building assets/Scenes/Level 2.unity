@@ -510,7 +510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &24404453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10720,7 +10720,7 @@ MonoBehaviour:
   VaultEndPoint: {fileID: 2035442575}
   ClimbTime: 0.6
   ClimbEndPoint: {fileID: 1582885412}
-  blurScreen: {fileID: 1812890354}
+  blurScreen: {fileID: 0}
   animator: {fileID: 743488613}
   currCheckpoint: {fileID: 460422318}
 --- !u!114 &1120642852
@@ -14433,6 +14433,7 @@ GameObject:
   - component: {fileID: 1453078676}
   - component: {fileID: 1453078675}
   - component: {fileID: 1453078678}
+  - component: {fileID: 1453078679}
   m_Layer: 0
   m_Name: platform (1)
   m_TagString: Untagged
@@ -14533,6 +14534,20 @@ MonoBehaviour:
   IsEnabled: 1
   tags:
   - Wall
+--- !u!114 &1453078679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453078673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009a96eaef434ae448aac377da8b0da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags: []
 --- !u!1 &1456138826
 GameObject:
   m_ObjectHideFlags: 0
@@ -15144,6 +15159,7 @@ GameObject:
   - component: {fileID: 1497350190}
   - component: {fileID: 1497350189}
   - component: {fileID: 1497350192}
+  - component: {fileID: 1497350193}
   m_Layer: 0
   m_Name: platform
   m_TagString: Untagged
@@ -15244,6 +15260,20 @@ MonoBehaviour:
   IsEnabled: 1
   tags:
   - Wall
+--- !u!114 &1497350193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497350187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009a96eaef434ae448aac377da8b0da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsEnabled: 1
+  tags: []
 --- !u!1 &1498195835
 GameObject:
   m_ObjectHideFlags: 0
