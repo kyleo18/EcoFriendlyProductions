@@ -136,7 +136,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             controls.Player.Sprint.performed += ctx => controllerSprinting();
 
-            controls.Player.Jump.performed += ctx => controllerJump();
+            //controls.Player.Jump.performed += ctx => controllerJump();
 
             controls.Player.Move.performed += vec => gamepadMoveVec2 = vec.ReadValue<Vector2>();
             controls.Player.Move.canceled += vec => gamepadMoveVec2 = Vector2.zero;
@@ -167,7 +167,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsGrounded)
             {
 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button0))
                 {
                     NormalJump();
                     playerController.jump();
@@ -191,14 +191,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 sprinting = false;
             }
         }
-        void controllerJump()
+        /*void controllerJump()
         {
             if(m_IsGrounded)
             {
                 NormalJump();
                 playerController.jump();
             }
-        }
+        }*/
         
 
 
