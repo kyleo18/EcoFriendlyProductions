@@ -92,7 +92,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             canrotate = true;
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
+
             mouseLook.Init(transform, cam.transform);
+
+            mouseLook.Init (transform, cam.transform);
+
+
+            controls = new GamepadControls();
+
+            StartCoroutine(CheckForControllers());            
+
+            controls.Player.Sprint.performed += ctx => controllerSprinting();
+
+            //controls.Player.Jump.performed += ctx => controllerJump();
+
+            controls.Player.Move.performed += vec => gamepadMoveVec2 = vec.ReadValue<Vector2>();
+            controls.Player.Move.canceled += vec => gamepadMoveVec2 = Vector2.zero;
+
         }
 
 
@@ -117,7 +133,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_IsGrounded)
             {
 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button0))
                 {
                     NormalJump();
                 }
@@ -125,6 +141,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
         }
+
+
+        void controllerSprinting()
+        {
+            if(sprinting == false)
+            {
+                movementSettings.ForwardSpeed = movementSettings.runSpeed;
+                playerController.sprinting();
+                sprinting = true;
+            }
+            else
+            {
+                movementSettings.ForwardSpeed = movementSettings.walkSpeed;
+                sprinting = false;
+            }
+        }
+        /*void controllerJump()
+        {
+            if(m_IsGrounded)
+            {
+                NormalJump();
+                playerController.jump();
+            }
+        }*/
+        
 
 
         private void LateUpdate()
