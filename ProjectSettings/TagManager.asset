@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Checkpoint
   - bouncePad
+  - creaturecollider
+  - crate
   layers:
   - Default
   - TransparentFX
