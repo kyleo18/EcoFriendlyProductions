@@ -407,7 +407,15 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "limit")
         {
             //SceneManager.LoadScene(sceneBuildIndex: 2);
-            transform.position = currCheckpoint.transform.position;
+            //transform.position = currCheckpoint.transform.position;
+            if(currCheckpoint != null)
+            {
+                transform.position = currCheckpoint.transform.position;
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneBuildIndex: 6);
+            }
         }
         if (collision.gameObject.tag == "Finish")
         {

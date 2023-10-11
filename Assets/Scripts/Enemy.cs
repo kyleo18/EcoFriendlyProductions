@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "crate")
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }       
     }
     private void OnTriggerEnter(Collider other)
