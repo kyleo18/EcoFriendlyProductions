@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         }
         //vault
         if (detectVaultObject.Obstruction && !detectVaultObstruction.Obstruction && !CanVault && !IsParkour && !WallRunning
-            && (Input.GetKey(KeyCode.Space) || !rbfps.Grounded) && Input.GetAxisRaw("Vertical") > 0f)
+            && (Input.GetKey(KeyCode.Space) || !rbfps.Grounded || Input.GetKey(KeyCode.Joystick1Button0)) && Input.GetAxisRaw("Vertical") > 0f)
         // if detects a vault object and there is no wall in front then player can pressing space or in air and pressing forward
         {
             CanVault = true;
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
         //climb
         if (detectClimbObject.Obstruction && !detectClimbObstruction.Obstruction && !CanClimb && !IsParkour && !WallRunning
-            && (Input.GetKey(KeyCode.Space) || !rbfps.Grounded) && Input.GetAxisRaw("Vertical") > 0f)
+            && (Input.GetKey(KeyCode.Space) || !rbfps.Grounded || Input.GetKey(KeyCode.Joystick1Button0)) && Input.GetAxisRaw("Vertical") > 0f)
         {
             CanClimb = true;
         }
@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, upforce, rb.velocity.z); //set the y velocity while wallrunning
             upforce -= WallRunUpForce_DecreaseRate * Time.deltaTime; //so the player will have a curve like wallrun, upforce from line 136
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button0))
             {
                 rb.velocity = transform.forward * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; //walljump
                 WallrunningLeft = false;
