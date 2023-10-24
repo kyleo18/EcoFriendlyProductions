@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
-    private float thrust = 20f;
+    private float thrust = 10f;
     private Rigidbody rb;
     public Transform player;
     private void Start()
