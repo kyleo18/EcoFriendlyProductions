@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer.Internal;
@@ -19,9 +20,18 @@ public class PopupText : MonoBehaviour
     // 0 = remove on a zone trigger | 1 = remove after time after appearing
     public int removeMode;
 
+    //public GameObject dialogueObject;
+
+    public AudioSource thisSource, playerSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerSource = GameObject.Find("Dialogue Audio").gameObject.GetComponent<AudioSource>();
+        thisSource = popUp.transform.Find("1").GetComponent<AudioSource>();
+
+        Debug.Log(thisSource.clip);
+
         if (popMode == 1)
         {
             Invoke("AddPopUp", timeAdd);
@@ -51,6 +61,9 @@ public class PopupText : MonoBehaviour
 
 
             popUp.SetActive(true);
+            Debug.Log("Is this a dream");
+            playerSource.clip = thisSource.clip;
+            playerSource.Play();
 
 
 
