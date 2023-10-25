@@ -276,7 +276,7 @@ public class PlayerController : MonoBehaviour
         }
         if(doWithdrawalEffects == true && movingBuff == true)
         {
-            //timeToEndWithdrawal = 0f;
+            timeToEndWithdrawal = 0f;
         }
         if (timeToWithdrawal >= sobriety)
         {
