@@ -47,4 +47,8 @@ public class Scenes : MonoBehaviour
     {
         SceneManager.LoadScene(sceneBuildIndex: 8);
     }
+    public void Asteroids()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 10);
+    }
 }
