@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
-    private float thrust = 12f;
+    private float thrust = 5f;
     private Rigidbody rb;
     public Transform player;
     public Transform player2;
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
             distance = targetLocation.magnitude;
         }
         distance = targetLocation.magnitude;
-        rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 0) / 500, 0f, 1f) * thrust);
+        rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 0) / 0, 0f, 1f) * thrust);
     }
     //private void OnCollisionEnter(Collision other)
     //{        
