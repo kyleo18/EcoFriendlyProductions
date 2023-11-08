@@ -1,58 +1,50 @@
 using System;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    [RequireComponent(typeof (Rigidbody))]
-    [RequireComponent(typeof (CapsuleCollider))]
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
-        //public Animator animator;
         public PlayerController playerController;
-        void Start()
-        {
-            //animator = GetComponent<Animator>();
-        }
         [Serializable]
         public class MovementSettings
         {
             public float ForwardSpeed = 2.0f;   // Speed when walking forward
-            
+
             public float walkSpeed = 2.0f, runSpeed = 6.0f;
             //public float walkAirSpeed = 0.3f, runAirSpeed
 
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
             public float SpeedInAir = 8.0f;   // Speed when onair
-            public float JumpForce = 30f;            
+            public float JumpForce = 30f;
             [HideInInspector] public float CurrentTargetSpeed = 8f;
-           
 
 #if !MOBILE_INPUT
             private bool m_Running;
 #endif
-           
+
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
-	            if (input == Vector2.zero) return;
-				if (input.x > 0 || input.x < 0)
-				{
-					//strafe
-					CurrentTargetSpeed = StrafeSpeed;
-				}
-				if (input.y < 0)
-				{
-					//backwards
-					CurrentTargetSpeed = BackwardSpeed;
-				}
-				if (input.y > 0)
-				{
-					//forwards
-					//handled last as if strafing and moving forward at the same time forwards speed should take precedence
-					CurrentTargetSpeed = ForwardSpeed;
-				}
+                if (input == Vector2.zero) return;
+                if (input.x > 0 || input.x < 0)
+                {
+                    //strafe
+                    CurrentTargetSpeed = StrafeSpeed;
+                }
+                if (input.y < 0)
+                {
+                    //backwards
+                    CurrentTargetSpeed = BackwardSpeed;
+                }
+                if (input.y > 0)
+                {
+                    //forwards
+                    //handled last as if strafing and moving forward at the same time forwards speed should take precedence
+                    CurrentTargetSpeed = ForwardSpeed;
+                }
 
             }
 
@@ -73,12 +65,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool isRunning;
         public bool hasLanded;
 
-        public bool sprinting = false;
 
-        public Rigidbody m_RigidBody;
-        public CapsuleCollider m_Capsule;
+
+        private Rigidbody m_RigidBody;
+        private CapsuleCollider m_Capsule;
         private float m_YRotation;
-        private bool  m_IsGrounded;
+        private bool m_IsGrounded;
 
 
         public Vector3 Velocity
@@ -92,54 +84,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        GamepadControls controls;
 
-        Vector2 gamepadMoveVec2;
-
-        bool connected = false;
-        IEnumerator CheckForControllers()
-        {
-            while (true)
-            {
-                string[] controllers = Input.GetJoystickNames();
-
-                if (connected == false && controllers.Length > 0)
-                {
-                    connected = true;
-                    controls.Player.Enable();
-                    Debug.Log("Connected");
-
-                }
-                else if (connected && controllers.Length == 0)
-                {
-                    connected = false;
-                    controls.Player.Disable();
-                    Debug.Log("Disconnected");
-                }
-
-                yield return new WaitForSeconds(1f);
-            }
-        }
 
         private void Awake()
         {
-            
+
             canrotate = true;
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
+
+            mouseLook.Init(transform, cam.transform);
+
             mouseLook.Init (transform, cam.transform);
 
 
-            controls = new GamepadControls();
 
-            StartCoroutine(CheckForControllers());            
 
-            controls.Player.Sprint.performed += ctx => controllerSprinting();
-
-            //controls.Player.Jump.performed += ctx => controllerJump();
-
-            controls.Player.Move.performed += vec => gamepadMoveVec2 = vec.ReadValue<Vector2>();
-            controls.Player.Move.canceled += vec => gamepadMoveVec2 = Vector2.zero;
         }
 
 
@@ -151,13 +111,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 movementSettings.ForwardSpeed = movementSettings.runSpeed;
-                playerController.sprinting();
-                sprinting = true;
             }
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 movementSettings.ForwardSpeed = movementSettings.walkSpeed;
-                sprinting = false;
             }
 
 
@@ -170,27 +127,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
                 {
                     NormalJump();
-                    playerController.jump();
                 }
 
             }
 
         }
 
-        void controllerSprinting()
-        {
-            if(sprinting == false)
-            {
-                movementSettings.ForwardSpeed = movementSettings.runSpeed;
-                playerController.sprinting();
-                sprinting = true;
-            }
-            else
-            {
-                movementSettings.ForwardSpeed = movementSettings.walkSpeed;
-                sprinting = false;
-            }
-        }
+
+
         /*void controllerJump()
         {
             if(m_IsGrounded)
@@ -212,7 +156,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 mouseLook.LookOveride(transform, cam.transform);
             }
-         
+
 
         }
         public void CamGoBack(float speed)
@@ -220,7 +164,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             mouseLook.CamGoBack(transform, cam.transform, speed);
 
         }
-        public void CamGoBackAll ()
+        public void CamGoBackAll()
         {
             mouseLook.CamGoBackAll(transform, cam.transform);
 
@@ -228,16 +172,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             GroundCheck();
-
-            Vector2 input;
-            if (controls.Player.enabled == true)
-            {
-                input = gamepadMoveVec2;
-            }
-            else
-            {
-                input = GetInput();
-            }
+            Vector2 input = GetInput();
 
             float h = input.x;
             float v = input.y;
@@ -245,7 +180,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             inputVector = Vector3.ClampMagnitude(inputVector, 1);
 
             stopWalk();
-            //playerController.Stopmoving();
+            playerController.Stopmoving();
 
             //grounded
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && m_IsGrounded && !Wallrunning)
@@ -253,92 +188,60 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (Input.GetAxisRaw("Vertical") > 0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.ForwardSpeed * Mathf.Abs(inputVector.z));
-                    if(sprinting)
-                    {
-                        playerController.sprinting();
-                    }
-                    else
-                    {
-                        playerController.moving();
-                    }
-                    //playerController.moving();                    
+                    playerController.moving();
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.BackwardSpeed * Mathf.Abs(inputVector.z));
-                    if (sprinting)
-                    {
-                        playerController.sprinting();
-                    }
-                    else
-                    {
-                        playerController.moving();
-                    }
-                    //playerController.moving();
+                    playerController.moving();
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
-                    if (sprinting)
-                    {
-                        playerController.sprinting();
-                    }
-                    else
-                    {
-                        playerController.moving();
-                    }
-                    //playerController.moving();
+                    playerController.moving();
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
-                    if (sprinting)
-                    {
-                        playerController.sprinting();
-                    }
-                    else
-                    {
-                        playerController.moving();
-                    }
-                    //playerController.moving();
+                    playerController.moving();
                     playWalk();
                 }
-                
+
             }
             //inair
-            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && !m_IsGrounded  && !Wallrunning)
+            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && !m_IsGrounded && !Wallrunning)
             {
                 if (Input.GetAxisRaw("Vertical") > 0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
-                    playerController.moving();
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
-                    playerController.moving();
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
-                    playerController.moving();
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
-                    playerController.moving();
+                    playerController.Stopmoving();
                     walking.Stop();
                 }
 
             }
 
-     
+
         }
 
         public AudioSource walking;
@@ -356,13 +259,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             //Debug.Log("walk stop");
 
-            if(Input.anyKey == false)
+            if (Input.anyKey == false)
             {
-                playerController.Stopmoving();
                 if (walking.isPlaying == true)
                 {
                     walking.Stop();
-                    
                 }
             }
         }
@@ -377,20 +278,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody.velocity = transform.forward * m_RigidBody.velocity.magnitude;
             m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
         }
-  
 
-      
+
+
 
 
         private Vector2 GetInput()
         {
-            
+
             Vector2 input = new Vector2
-                {
-                    x = Input.GetAxisRaw("Horizontal"),
-                    y = Input.GetAxisRaw("Vertical")
-                };
-			movementSettings.UpdateDesiredTargetSpeed(input);
+            {
+                x = Input.GetAxisRaw("Horizontal"),
+                y = Input.GetAxisRaw("Vertical")
+            };
+            movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
         }
 
@@ -403,20 +304,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get the rotation before it's changed
             float oldYRotation = transform.eulerAngles.y;
 
-            mouseLook.LookRotation (transform, cam.transform);
+            mouseLook.LookRotation(transform, cam.transform);
 
-       
+
         }
 
 
         /// sphere cast down just beyond the bottom of the capsule to see if the capsule is colliding round the bottom
         private void GroundCheck()
         {
-          if(detectGround.Obstruction)
+            if (detectGround.Obstruction)
             {
                 m_IsGrounded = true;
             }
-          else
+            else
             {
                 m_IsGrounded = false;
 
@@ -434,7 +335,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 movementSettings.runSpeed *= 2;
                 movementSettings.walkSpeed *= 2;
-            }           
+            }
             movementSettings.ForwardSpeed = movementSettings.runSpeed;
             movementSettings.ForwardSpeed = movementSettings.walkSpeed;
         }

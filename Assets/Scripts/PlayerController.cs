@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class PlayerController : MonoBehaviour
 {
+
     public float timer;
     public TextMeshProUGUI timerText;
     public float sobriety = 20f;
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
     private bool canwallrun; // ensure that player can only wallrun once before needing to hit the ground again, can be modified for double wallruns
     //double wallrun
     private float timeToWallRunAgain = 0f;
-    
+
     public bool IsParkour;
     private float t_parkour;
     private float chosenParkourMoveTime;
@@ -74,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject currCheckpoint;
 
+
+
     private RigidbodyFirstPersonController rbfps;
     private Rigidbody rb;
     private Vector3 RecordedMoveToPosition; //the position of the vault end point in world space to move the player to
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         blur.Multiplier = 0;
         animator = GetComponent<Animator>();
         timer = 420f;
+
     }
 
     // Update is called once per frame
@@ -97,17 +101,8 @@ public class PlayerController : MonoBehaviour
     {
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
-        progress.maxValue = sobriety;
-        progress.value = timeToWithdrawal;
-        if(timer > 0)
-        {
-            timer -= Time.deltaTime;
-            updateTimer(timer);
-        }
-        else if (timer <= 0)
-        {
-            SceneManager.LoadScene(sceneBuildIndex: 6);
-        }
+
+
 
         if (rbfps.Grounded)
         {
@@ -119,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.drag = drag_inair;
         }
-        if(WallRunning)
+        if (WallRunning)
         {
             rb.drag = drag_wallrun;
 
@@ -141,7 +136,7 @@ public class PlayerController : MonoBehaviour
             IsParkour = true;
             chosenParkourMoveTime = VaultTime;
 
-            //cameraAnimator.CrossFade("Vault",0.1f);
+            cameraAnimator.CrossFade("Vault", 0.1f);
         }
 
         //climb
@@ -160,7 +155,7 @@ public class PlayerController : MonoBehaviour
             IsParkour = true;
             chosenParkourMoveTime = ClimbTime;
 
-            cameraAnimator.CrossFade("Climb",0.1f);
+            cameraAnimator.CrossFade("Climb", 0.1f);
         }
 
 
@@ -207,7 +202,7 @@ public class PlayerController : MonoBehaviour
             WallrunningRight = false;
         }
 
-        if (WallrunningLeft || WallrunningRight) 
+        if (WallrunningLeft || WallrunningRight)
         {
             WallRunning = true;
             rbfps.Wallrunning = true; // this stops the playermovement (refer to fpscontroller script)
@@ -219,7 +214,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (WallrunningLeft)
-        {     
+        {
             cameraAnimator.SetBool("WallLeft", true); //Wallrun camera tilt
         }
         else
@@ -227,7 +222,7 @@ public class PlayerController : MonoBehaviour
             cameraAnimator.SetBool("WallLeft", false);
         }
         if (WallrunningRight)
-        {           
+        {
             cameraAnimator.SetBool("WallRight", true);
         }
         else
@@ -237,8 +232,8 @@ public class PlayerController : MonoBehaviour
 
         if (WallRunning)
         {
-            
-            rb.velocity = new Vector3(rb.velocity.x, upforce ,rb.velocity.z); //set the y velocity while wallrunning
+
+            rb.velocity = new Vector3(rb.velocity.x, upforce, rb.velocity.z); //set the y velocity while wallrunning
             upforce -= WallRunUpForce_DecreaseRate * Time.deltaTime; //so the player will have a curve like wallrun, upforce from line 136
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button0))
@@ -247,7 +242,7 @@ public class PlayerController : MonoBehaviour
                 WallrunningLeft = false;
                 WallrunningRight = false;
             }
-            if(rbfps.Grounded)
+            if (rbfps.Grounded)
             {
                 WallrunningLeft = false;
                 WallrunningRight = false;
@@ -274,7 +269,7 @@ public class PlayerController : MonoBehaviour
         {
             timeToWithdrawal = 0f;
         }
-        if(doWithdrawalEffects == true && movingBuff == true)
+        if (doWithdrawalEffects == true && movingBuff == true)
         {
             //timeToEndWithdrawal = 0f;
         }
@@ -300,8 +295,7 @@ public class PlayerController : MonoBehaviour
 
                 if (WithdrawalCounter % 2 == 0 && blur.Multiplier < 1)
                 {
-                    //blur.Multiplier += .005f;
-                    blurScreen.gameObject.SetActive(true);
+                    blur.Multiplier += .005f;
                     bluricon.gameObject.SetActive(true);
                     //doneWithdrawalEffects = true;
                 }
@@ -319,7 +313,7 @@ public class PlayerController : MonoBehaviour
                     blur.Multiplier = 0;
                     blurScreen.gameObject.SetActive(false);
                     bluricon.gameObject.SetActive(false);
-                }                
+                }
                 if (timeToEndWithdrawal >= 10.0f)
                 {
                     sobriety += 5;
@@ -330,7 +324,7 @@ public class PlayerController : MonoBehaviour
             }
             if (timeToEndWithdrawal <= 10.0f && Input.GetKeyDown(KeyCode.F))
             {
-                smoke = true;                                         
+                smoke = true;
             }
             if (timeToSmoke > 3f)
             {
@@ -356,10 +350,10 @@ public class PlayerController : MonoBehaviour
                     smoke = false;
                 }
             }
-        }       
-        if(boost)
-        {            
-            timeBoost += Time.deltaTime;           
+        }
+        if (boost)
+        {
+            timeBoost += Time.deltaTime;
             if (timeBoost > 5f)
             {
                 boost = false;
@@ -368,7 +362,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    public void updateTimer (float currentTime)
+
+        public void updateTimer(float currentTime)
     {
         currentTime += 1;
         float minutes = Mathf.FloorToInt(currentTime / 60);
@@ -379,34 +374,18 @@ public class PlayerController : MonoBehaviour
     {
         movingBuff = true;
         timeToSmoke = 0f;
-        animator.ResetTrigger("idle");
-        animator.SetTrigger("walking2");
-       
-    }
-    public void sprinting()
-    {
-        animator.ResetTrigger("idle");
-        animator.ResetTrigger("walking2");
-        animator.SetTrigger("sprint");
-    }
-    public void jump()
-    {       
-        animator.SetTrigger("Jump");
     }
     public void Stopmoving()
     {
         movingBuff = false;
-        if(doWithdrawalEffects && smoke)
+        if (doWithdrawalEffects && smoke)
         {
             timeToSmoke += Time.deltaTime;
         }
-        animator.ResetTrigger("walking2");
-        animator.SetTrigger("idle");
-
     }
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "limit")
+        if (collision.gameObject.tag == "limit")
         {
             //SceneManager.LoadScene(sceneBuildIndex: 2);
             //transform.position = currCheckpoint.transform.position;
@@ -432,7 +411,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collider.gameObject.tag == "Checkpoint")
         {
-            
+
             currCheckpoint = collider.gameObject;
             collider.enabled = false;
             collider.gameObject.GetComponentInChildren<Renderer>().enabled = false;
