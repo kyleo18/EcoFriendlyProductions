@@ -12,6 +12,7 @@ TagManager:
   - bouncePad
   - creaturecollider
   - crate
+  - dragon
   layers:
   - Default
   - TransparentFX
