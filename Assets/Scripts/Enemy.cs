@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
             distance = targetLocation.magnitude;
         }
         distance = targetLocation.magnitude;
-        rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 500) / 500, 0f, 1f) * thrust);
+        rb.AddRelativeForce(Vector3.forward * Mathf.Clamp((distance - 0) / 500, 0f, 1f) * thrust);
     }
     //private void OnCollisionEnter(Collision other)
     //{        
