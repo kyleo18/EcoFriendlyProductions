@@ -61,7 +61,7 @@ public class PopupText : MonoBehaviour
 
 
             popUp.SetActive(true);
-            Debug.Log("Is this a dream");
+            //Debug.Log("trigger");
             playerSource.clip = thisSource.clip;
             playerSource.Play();
 
