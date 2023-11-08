@@ -5498,6 +5498,7 @@ GameObject:
   - component: {fileID: 357634066}
   - component: {fileID: 357634068}
   - component: {fileID: 357634067}
+  - component: {fileID: 357634069}
   m_Layer: 5
   m_Name: we had fun trigger
   m_TagString: Untagged
@@ -5560,6 +5561,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &357634069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357634065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 0}
+  popZone: {fileID: 0}
+  removeZone: {fileID: 0}
+  timeAdd: 0
+  timeRemove: 0
+  triggered: 0
+  popMode: 0
+  removeMode: 0
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1001 &363351556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6755,6 +6778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441626796}
   - component: {fileID: 441626798}
+  - component: {fileID: 441626799}
   m_Layer: 5
   m_Name: intervention trigger
   m_TagString: Untagged
@@ -6795,6 +6819,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &441626799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441626795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 0}
+  popZone: {fileID: 441626795}
+  removeZone: {fileID: 0}
+  timeAdd: 1
+  timeRemove: 8
+  triggered: 0
+  popMode: 0
+  removeMode: 1
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1 &441768579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4155092160825153246, guid: 1091ee0a141f2ba429668a6cc5a0f03e, type: 3}
@@ -8898,6 +8944,7 @@ GameObject:
   - component: {fileID: 644362269}
   - component: {fileID: 644362271}
   - component: {fileID: 644362270}
+  - component: {fileID: 644362272}
   m_Layer: 5
   m_Name: we loved each other trigger
   m_TagString: Untagged
@@ -8960,6 +9007,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &644362272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644362268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 0}
+  popZone: {fileID: 0}
+  removeZone: {fileID: 0}
+  timeAdd: 0
+  timeRemove: 0
+  triggered: 0
+  popMode: 0
+  removeMode: 0
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1 &644694842
 GameObject:
   m_ObjectHideFlags: 0
