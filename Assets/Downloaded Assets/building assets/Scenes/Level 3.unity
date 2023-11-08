@@ -6755,7 +6755,6 @@ GameObject:
   m_Component:
   - component: {fileID: 441626796}
   - component: {fileID: 441626798}
-  - component: {fileID: 441626797}
   m_Layer: 5
   m_Name: intervention trigger
   m_TagString: Untagged
@@ -6783,28 +6782,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1422.41, y: 91.57}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &441626797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441626795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUp: {fileID: 0}
-  popZone: {fileID: 441626795}
-  removeZone: {fileID: 0}
-  timeAdd: 1
-  timeRemove: 8
-  triggered: 0
-  popMode: 0
-  removeMode: 1
-  thisSource: {fileID: 0}
-  playerSource: {fileID: 0}
 --- !u!65 &441626798
 BoxCollider:
   m_ObjectHideFlags: 0
