@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 71588193}
   - component: {fileID: 71588192}
   m_Layer: 5
-  m_Name: we had fun trigger
+  m_Name: they took her trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1907,7 +1907,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71588190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 326.13}
+  m_LocalPosition: {x: 0, y: 0, z: 301.01}
   m_LocalScale: {x: 0.7671875, y: 0.7671875, z: 0.7671875}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1916,7 +1916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1420.55, y: 91.57}
+  m_AnchoredPosition: {x: -1423.4788, y: 103.78}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71588192
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   popZone: {fileID: 89177759}
   removeZone: {fileID: 0}
   timeAdd: 1
-  timeRemove: 8
+  timeRemove: 10
   triggered: 0
   popMode: 0
   removeMode: 1
@@ -2089,7 +2089,7 @@ GameObject:
   - component: {fileID: 93403167}
   - component: {fileID: 93403166}
   m_Layer: 5
-  m_Name: we loved each other trigger
+  m_Name: broke trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2103,7 +2103,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93403164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 529.18}
+  m_LocalPosition: {x: 0, y: 0, z: 677.09}
   m_LocalScale: {x: 0.7671875, y: 0.7671875, z: 0.7671875}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2112,7 +2112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1454, y: 132.9}
+  m_AnchoredPosition: {x: -1416.5398, y: 82.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &93403166
@@ -2127,11 +2127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUp: {fileID: 0}
+  popUp: {fileID: 186850933}
   popZone: {fileID: 93403164}
   removeZone: {fileID: 0}
   timeAdd: 1
-  timeRemove: 8
+  timeRemove: 13
   triggered: 0
   popMode: 0
   removeMode: 1
@@ -5728,7 +5728,7 @@ GameObject:
   - component: {fileID: 186850934}
   - component: {fileID: 186850935}
   m_Layer: 5
-  m_Name: we loved each other
+  m_Name: broke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11858,6 +11858,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 469044, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
   m_PrefabInstance: {fileID: 449021914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &450115210
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 164.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 117.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 498.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7841678
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.042469017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6181879
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.033479866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 76.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_Name
+      value: TV_Apt_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 81f657754f2f35149a04e5199f046abb, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
 --- !u!1001 &450850511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16445,11 +16518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUp: {fileID: 0}
+  popUp: {fileID: 1335883260}
   popZone: {fileID: 690665598}
   removeZone: {fileID: 0}
   timeAdd: 1
-  timeRemove: 8
+  timeRemove: 10
   triggered: 0
   popMode: 0
   removeMode: 1
@@ -26152,7 +26225,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e251472149467d64fa95e1bce6848c2d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5b38e9d796001704baea4aefe64abd33, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -26258,8 +26331,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Alyssa always saw the best in me. And I loved her. I loved her so much.
-    I want to take everything back. I wish I never picked that cigarette up.
+  m_text: I couldn't exert myself for more than minutes at a time. They fired me
+    from the dock I worked at. I lost my only way to earn. I lost my home shortly
+    after, and had to stay with my mom.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -36674,7 +36748,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 24b434e8f7dac684380aa56a0d1a571d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -36780,8 +36854,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Why is that floating TV showing a video of me at my worst, living on the
-    streets.
+  m_text: I thought I lost everything. My friends, my job, my home. But then it took
+    my mom. I have nothing left.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -38619,6 +38693,99 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1001 &1628651265
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 186.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 108.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 849.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.75345033
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.106481686
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6104274
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.21989241
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 76.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821776, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -27.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_Name
+      value: TV_Apt_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 8e65beab549350b4792df12d91800032, type: 3}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_ControlledAudioTrackCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_DirectAudioMutes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_EnabledAudioTracks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_TargetAudioSources.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
 --- !u!1 &1635484722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 750556226023206186, guid: d9d9f374cc51a6b4fb75751346d70b83, type: 3}
@@ -39834,7 +40001,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7855cbf06f6c0ea4a8420a90852a232e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2dd7403de833add45842fa91003ec3a0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
