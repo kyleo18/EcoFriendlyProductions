@@ -271,7 +271,7 @@ public class PlayerController : MonoBehaviour
         }
         if (doWithdrawalEffects == true && movingBuff == true)
         {
-            timeToEndWithdrawal = 0f;
+            //timeToEndWithdrawal = 0f;
         }
         if (timeToWithdrawal >= sobriety)
         {
@@ -288,6 +288,7 @@ public class PlayerController : MonoBehaviour
                 if (WithdrawalCounter % 2 == 1 && !doneWithdrawalEffects)
                 {
                     this.gameObject.SendMessage("Fatigue", true);
+                    drag_wallrun = 1.5f;
                     doneWithdrawalEffects = true;
                     slowicon.gameObject.SetActive(true);
                 }
@@ -305,6 +306,7 @@ public class PlayerController : MonoBehaviour
                 {
                     this.gameObject.SendMessage("Fatigue", false);
                     slowicon.gameObject.SetActive(false);
+                    drag_wallrun = 0;
                 }
                 if (WithdrawalCounter % 2 == 0)
                 {
@@ -386,7 +388,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "limit")
         {
             //SceneManager.LoadScene(sceneBuildIndex: 2);
-            transform.position = currCheckpoint.transform.position;
+            //transform.position = currCheckpoint.transform.position;
+            if(currCheckpoint != null)
+            {
+                transform.position = currCheckpoint.transform.position;
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneBuildIndex: 6);
+            }
         }
         if (collision.gameObject.tag == "Finish")
         {
