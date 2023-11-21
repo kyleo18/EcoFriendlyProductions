@@ -1324,9 +1324,6 @@ MonoBehaviour:
   isWalking: 0
   isRunning: 0
   hasLanded: 0
-  sprinting: 0
-  m_RigidBody: {fileID: 0}
-  m_Capsule: {fileID: 0}
   walking: {fileID: 34959526}
 --- !u!54 &34959531
 Rigidbody:
@@ -10763,9 +10760,6 @@ MonoBehaviour:
   isWalking: 0
   isRunning: 0
   hasLanded: 0
-  sprinting: 0
-  m_RigidBody: {fileID: 1120642853}
-  m_Capsule: {fileID: 1120642854}
   walking: {fileID: 1120642848}
 --- !u!54 &1120642853
 Rigidbody:
