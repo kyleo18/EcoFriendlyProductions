@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Downloaded Assets/building assets/Scenes/Asteroid Level.unity
     guid: fa4ceecd7f72af547834dbd981a72598
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/Level 3.unity
+    guid: 096322b891fb7fd4d973a10606c4ab17
+  - enabled: 1
+    path: Assets/Downloaded Assets/building assets/Scenes/WinAsteroid.unity
+    guid: 35581bf2a66452b4084182d3c3d88a44
   m_configObjects: {}

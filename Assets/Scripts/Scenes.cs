@@ -21,7 +21,7 @@ public class Scenes : MonoBehaviour
     }
     public void Level2()
     {
-        SceneManager.LoadScene(sceneBuildIndex: 2);
+        SceneManager.LoadScene(sceneBuildIndex: 11);
     }
     public void Select()
     {
@@ -34,6 +34,10 @@ public class Scenes : MonoBehaviour
     public void win()
     {
         SceneManager.LoadScene(sceneBuildIndex: 5);
+    }
+    public void winAsteroid()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 12);
     }
     public void die()
     {

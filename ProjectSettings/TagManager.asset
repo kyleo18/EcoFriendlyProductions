@@ -13,6 +13,8 @@ TagManager:
   - creaturecollider
   - crate
   - dragon
+  - FinishCargo
+  - FinishAsteroid
   layers:
   - Default
   - TransparentFX
