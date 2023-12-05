@@ -15,6 +15,7 @@ TagManager:
   - dragon
   - FinishCargo
   - FinishAsteroid
+  - Finish3
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
     public float timeToEndWithdrawal = 0.0f;
     public float timeToSmoke = 0.0f;
     public float timeBoost = 0.0f;
+    public float timeEnd = 0.0f;
+    public float timeEnd2 = 0.0f;
+    public float timeEnd3 = 0.0f;
+    public bool ending = false;
+    public bool ending2 = false;
+    public bool ending3 = false;
     public bool boost = false;
     public bool smoke = false;
     public bool doWithdrawalEffects = false;
@@ -25,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public Image bluricon;
     public bool movingBuff = false;
     public Slider progress;
+    public GameObject smokepart;
 
     public GameObject lastWall;
 
@@ -91,7 +98,7 @@ public class PlayerController : MonoBehaviour
         blur.Multiplier = 0;
         animator = GetComponent<Animator>();
         timer = 420f;
-
+        smokepart.SetActive(false);
     }
 
     // Update is called once per frame
@@ -99,7 +106,33 @@ public class PlayerController : MonoBehaviour
     {
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
-
+        if(ending == true)
+        {
+            timeEnd += Time.deltaTime;
+            smokepart.SetActive(true);
+        }
+        if (ending2 == true)
+        {
+            timeEnd2 += Time.deltaTime;
+            smokepart.SetActive(true);
+        }
+        if (ending3 == true)
+        {
+            timeEnd3 += Time.deltaTime;
+            smokepart.SetActive(true);
+        }
+        if (timeEnd > 5)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 5);
+        }
+        if (timeEnd2 > 5)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 12);
+        }
+        if (timeEnd3 > 5)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 0);
+        }
 
 
         if (rbfps.Grounded)
@@ -361,12 +394,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-        public void updateTimer(float currentTime)
+    public float updateTimer()
     {
-        currentTime += 1;
-        float minutes = Mathf.FloorToInt(currentTime / 60);
-        float seconds = Mathf.FloorToInt(currentTime % 60);
-        timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        return timeToEndWithdrawal;
     }
     public void moving()
     {
@@ -399,14 +429,23 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "FinishCargo")
         {
             Debug.Log("yep");
-            SceneManager.LoadScene(sceneBuildIndex: 5);
+            ending = true;
+            Destroy(collision.gameObject);
+            //SceneManager.LoadScene(sceneBuildIndex: 5);
         }
-        if (collision.gameObject.tag == "FinishCargo")
+        if (collision.gameObject.tag == "FinishAsteroid")
         {
             Debug.Log("yep");
-            SceneManager.LoadScene(sceneBuildIndex: 12);
+            ending2 = true;
+            Destroy(collision.gameObject);
         }
-
+        if (collision.gameObject.tag == "Finish3")
+        {
+            Debug.Log("yep");
+            ending3 = true;
+            Destroy(collision.gameObject);
+            //SceneManager.LoadScene(sceneBuildIndex: 5);
+        }
 
     }
 
