@@ -180,6 +180,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             inputVector = Vector3.ClampMagnitude(inputVector, 1);
 
             stopWalk();
+            stopRun();
+            stopWallRun();
             playerController.Stopmoving();
 
             //grounded
@@ -189,6 +191,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.ForwardSpeed * Mathf.Abs(inputVector.z));
                     playerController.moving();
+
                     playWalk();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
@@ -241,10 +244,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             }
 
-
+            if(Wallrunning == true)
+            {
+                playWallRun();
+            }
+            else
+            {
+                wallRunning.Stop();
+            }
         }
 
         public AudioSource walking;
+        public AudioSource running;
+        public AudioSource wallRunning;
+
         private void playWalk()
         {
             //Debug.Log("walk play");
@@ -265,6 +278,40 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     walking.Stop();
                 }
+            }
+        }
+
+        private void playRun()
+        {
+
+            if (running.isPlaying == false)
+            {
+                running.Play();
+            }
+        }
+        private void stopRun()
+        {
+            if (Input.anyKey == false)
+            {
+                if (running.isPlaying == true)
+                {
+                    running.Stop();
+                }
+            }
+        }
+
+        private void playWallRun()
+        {
+            if (wallRunning.isPlaying == false)
+            {
+                wallRunning.Play();
+            }
+        }
+        private void stopWallRun()
+        {
+            if (wallRunning.isPlaying == true)
+            {
+                Debug.Log("WALLRUN is playing");
             }
         }
 
