@@ -111,10 +111,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 movementSettings.ForwardSpeed = movementSettings.runSpeed;
+
+                isRunning = true;
             }
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 movementSettings.ForwardSpeed = movementSettings.walkSpeed;
+
+                isRunning = false;
             }
 
 
@@ -192,25 +196,56 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.ForwardSpeed * Mathf.Abs(inputVector.z));
                     playerController.moving();
 
-                    playWalk();
+                    if(isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.BackwardSpeed * Mathf.Abs(inputVector.z));
                     playerController.moving();
-                    playWalk();
+
+                    if (isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.moving();
-                    playWalk();
+
+                    if (isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.moving();
-                    playWalk();
+
+                    if (isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
 
             }
@@ -222,24 +257,28 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
 
             }
