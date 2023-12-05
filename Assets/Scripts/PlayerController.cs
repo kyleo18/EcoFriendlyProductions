@@ -75,8 +75,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject currCheckpoint;
 
-
-
     private RigidbodyFirstPersonController rbfps;
     private Rigidbody rb;
     private Vector3 RecordedMoveToPosition; //the position of the vault end point in world space to move the player to
@@ -398,10 +396,15 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(sceneBuildIndex: 6);
             }
         }
-        if (collision.gameObject.tag == "Finish")
+        if (collision.gameObject.tag == "FinishCargo")
         {
             Debug.Log("yep");
             SceneManager.LoadScene(sceneBuildIndex: 5);
+        }
+        if (collision.gameObject.tag == "FinishCargo")
+        {
+            Debug.Log("yep");
+            SceneManager.LoadScene(sceneBuildIndex: 12);
         }
 
 
