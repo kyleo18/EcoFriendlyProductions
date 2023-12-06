@@ -111,10 +111,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 movementSettings.ForwardSpeed = movementSettings.runSpeed;
+
+                isRunning = true;
             }
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 movementSettings.ForwardSpeed = movementSettings.walkSpeed;
+
+                isRunning = false;
             }
 
 
@@ -180,6 +184,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             inputVector = Vector3.ClampMagnitude(inputVector, 1);
 
             stopWalk();
+            stopRun();
+            stopWallRun();
             playerController.Stopmoving();
 
             //grounded
@@ -189,25 +195,57 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.ForwardSpeed * Mathf.Abs(inputVector.z));
                     playerController.moving();
-                    playWalk();
+
+                    if(isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.BackwardSpeed * Mathf.Abs(inputVector.z));
                     playerController.moving();
-                    playWalk();
+
+                    if (isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.moving();
-                    playWalk();
+
+                    if (isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.StrafeSpeed * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.moving();
-                    playWalk();
+
+                    if (isRunning == false)
+                    {
+                        playWalk();
+                    }
+                    else
+                    {
+                        playRun();
+                    }
                 }
 
             }
@@ -219,32 +257,46 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
                 if (Input.GetAxisRaw("Vertical") < -0.3f)
                 {
                     m_RigidBody.AddRelativeForce(0, 0, Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.z));
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") > 0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
                 if (Input.GetAxisRaw("Horizontal") < -0.5f)
                 {
                     m_RigidBody.AddRelativeForce(Time.deltaTime * 1000f * -movementSettings.SpeedInAir * Mathf.Abs(inputVector.x), 0, 0);
                     playerController.Stopmoving();
                     walking.Stop();
+                    running.Stop();
                 }
 
             }
 
-
+            if(Wallrunning == true)
+            {
+                playWallRun();
+            }
+            else
+            {
+                wallRunning.Stop();
+            }
         }
 
         public AudioSource walking;
+        public AudioSource running;
+        public AudioSource wallRunning;
+
         private void playWalk()
         {
             //Debug.Log("walk play");
@@ -265,6 +317,40 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     walking.Stop();
                 }
+            }
+        }
+
+        private void playRun()
+        {
+
+            if (running.isPlaying == false)
+            {
+                running.Play();
+            }
+        }
+        private void stopRun()
+        {
+            if (Input.anyKey == false)
+            {
+                if (running.isPlaying == true)
+                {
+                    running.Stop();
+                }
+            }
+        }
+
+        private void playWallRun()
+        {
+            if (wallRunning.isPlaying == false)
+            {
+                wallRunning.Play();
+            }
+        }
+        private void stopWallRun()
+        {
+            if (wallRunning.isPlaying == true)
+            {
+                Debug.Log("WALLRUN is playing");
             }
         }
 
