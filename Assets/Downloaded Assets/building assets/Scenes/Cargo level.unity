@@ -1956,7 +1956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71588191}
   - component: {fileID: 71588193}
-  - component: {fileID: 71588192}
+  - component: {fileID: 71588194}
   m_Layer: 5
   m_Name: they took her trigger
   m_TagString: Untagged
@@ -1984,18 +1984,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1423.4788, y: 103.78}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &71588192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71588190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &71588193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2009,6 +1997,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &71588194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71588190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 664612337}
+  popZone: {fileID: 71588190}
+  removeZone: {fileID: 0}
+  timeAdd: 0
+  timeRemove: 9
+  triggered: 0
+  popMode: 0
+  removeMode: 1
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1 &78252545 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5155411332129828939, guid: a32793c2d7a973541a705148244340ef, type: 3}
@@ -2069,7 +2079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89177760}
   - component: {fileID: 89177762}
-  - component: {fileID: 89177761}
+  - component: {fileID: 89177763}
   m_Layer: 5
   m_Name: where the hell trigger
   m_TagString: Untagged
@@ -2097,18 +2107,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1422.41, y: 94.08}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &89177761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89177759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &89177762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2122,6 +2120,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &89177763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89177759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 240023175}
+  popZone: {fileID: 89177759}
+  removeZone: {fileID: 0}
+  timeAdd: 0
+  timeRemove: 9
+  triggered: 0
+  popMode: 0
+  removeMode: 1
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1 &93403164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93403165}
   - component: {fileID: 93403167}
-  - component: {fileID: 93403166}
+  - component: {fileID: 93403168}
   m_Layer: 5
   m_Name: broke trigger
   m_TagString: Untagged
@@ -2160,18 +2180,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1416.5398, y: 82.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &93403166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93403164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &93403167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2185,6 +2193,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &93403168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93403164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 186850933}
+  popZone: {fileID: 93403164}
+  removeZone: {fileID: 0}
+  timeAdd: 0
+  timeRemove: 9
+  triggered: 0
+  popMode: 0
+  removeMode: 1
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1 &95130634
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,7 +3807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118076596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 183.7, y: 104.71, z: 135.07}
+  m_LocalPosition: {x: 183, y: 104, z: 135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3788,6 +3818,7 @@ Transform:
   - {fileID: 1775830630}
   - {fileID: 811955363}
   - {fileID: 2078061685}
+  - {fileID: 195511182}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6109,6 +6140,134 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &195511181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195511182}
+  - component: {fileID: 195511183}
+  m_Layer: 0
+  m_Name: Dialogue Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &195511182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195511181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118076603}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &195511183
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195511181}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &201095588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16346,7 +16505,7 @@ GameObject:
   - component: {fileID: 664612338}
   - component: {fileID: 664612339}
   m_Layer: 5
-  m_Name: temp 0
+  m_Name: took her from me
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16929,7 +17088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690665599}
   - component: {fileID: 690665601}
-  - component: {fileID: 690665600}
+  - component: {fileID: 690665602}
   m_Layer: 5
   m_Name: homeless trigger
   m_TagString: Untagged
@@ -16957,18 +17116,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1423.74, y: 87.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &690665600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690665598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a44fa4d1153328478547c31a3e1aceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &690665601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16982,6 +17129,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &690665602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690665598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2579eefc0e074b95d2acb2ab07573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUp: {fileID: 1335883260}
+  popZone: {fileID: 690665598}
+  removeZone: {fileID: 0}
+  timeAdd: 0
+  timeRemove: 9
+  triggered: 0
+  popMode: 0
+  removeMode: 1
+  thisSource: {fileID: 0}
+  playerSource: {fileID: 0}
 --- !u!1 &693033535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5781420221921499261, guid: 266d5a1d00e2ac2479b93bdd1914ad78, type: 3}
@@ -17300,7 +17469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1757.7656, y: 1035.7031}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &707438317
@@ -37226,7 +37395,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 24b434e8f7dac684380aa56a0d1a571d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5d295be0c0597ce45ab65e39d89e4eb6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -37332,8 +37501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I thought I lost everything. My friends, my job, my home. But then it took
-    my mom. I have nothing left.
+  m_text: No I have no job... no home... I live on the streets.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -38833,7 +39001,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 70ccfb1ce828a704695bbe291174cfa3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24b434e8f7dac684380aa56a0d1a571d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -38939,9 +39107,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We still worked at the same place. I took the train then, like her. I saw
-    her every day. The spiteful look she gave me every time made me search for anywhere
-    else to work.
+  m_text: I thought I lost everything. My friends, my job, my home. But then it took
+    my mom. I have nothing left.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
