@@ -1249,6 +1249,12 @@ MonoBehaviour:
   timeToEndWithdrawal: 0
   timeToSmoke: 0
   timeBoost: 0
+  timeEnd: 0
+  timeEnd2: 0
+  timeEnd3: 0
+  ending: 0
+  ending2: 0
+  ending3: 0
   boost: 0
   smoke: 0
   doWithdrawalEffects: 0
@@ -1258,6 +1264,7 @@ MonoBehaviour:
   bluricon: {fileID: 1837039570}
   movingBuff: 0
   progress: {fileID: 0}
+  smokepart: {fileID: 0}
   lastWall: {fileID: 0}
   drag_grounded: 5
   drag_inair: 0.2
@@ -6401,6 +6408,12 @@ MonoBehaviour:
   timeToEndWithdrawal: 0
   timeToSmoke: 0
   timeBoost: 0
+  timeEnd: 0
+  timeEnd2: 0
+  timeEnd3: 0
+  ending: 0
+  ending2: 0
+  ending3: 0
   boost: 0
   smoke: 0
   doWithdrawalEffects: 0
@@ -6410,6 +6423,7 @@ MonoBehaviour:
   bluricon: {fileID: 0}
   movingBuff: 0
   progress: {fileID: 0}
+  smokepart: {fileID: 0}
   lastWall: {fileID: 0}
   drag_grounded: 5
   drag_inair: 0.2
@@ -10462,7 +10476,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10688,6 +10702,12 @@ MonoBehaviour:
   timeToEndWithdrawal: 0
   timeToSmoke: 0
   timeBoost: 0
+  timeEnd: 0
+  timeEnd2: 0
+  timeEnd3: 0
+  ending: 0
+  ending2: 0
+  ending3: 0
   boost: 0
   smoke: 0
   doWithdrawalEffects: 0
@@ -10697,6 +10717,7 @@ MonoBehaviour:
   bluricon: {fileID: 1837039570}
   movingBuff: 0
   progress: {fileID: 349543395}
+  smokepart: {fileID: 0}
   lastWall: {fileID: 0}
   drag_grounded: 5
   drag_inair: 0.2

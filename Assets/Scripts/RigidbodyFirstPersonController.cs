@@ -350,7 +350,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if (wallRunning.isPlaying == true)
             {
-                Debug.Log("WALLRUN is playing");
+                wallRunning.Stop();
             }
         }
 
