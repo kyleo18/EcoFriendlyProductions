@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cabinet_Base_DD_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5262956300232747728, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
 --- !u!1001 &22645522
@@ -894,7 +898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998527035024098072, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
       propertyPath: m_TagString
-      value: bouncePad
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 7892085742027063612, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
       propertyPath: m_TagString
@@ -4038,7 +4042,7 @@ GameObject:
   - component: {fileID: 128181030}
   m_Layer: 0
   m_Name: Bouncy
-  m_TagString: Untagged
+  m_TagString: crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6504,6 +6508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table_Dining_Apt_01_Setup Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8163138141529047213, guid: 8949b4a88fb989e4483115e02dfafc96, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 9190095107950864778, guid: 8949b4a88fb989e4483115e02dfafc96, type: 3}
       propertyPath: m_RootOrder
       value: 224
@@ -8385,6 +8393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Painting_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5828997711346961650, guid: 034a790e51efb8c42af98f9b7728dfe6, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 6273954348158240993, guid: 034a790e51efb8c42af98f9b7728dfe6, type: 3}
       propertyPath: m_RootOrder
       value: 156
@@ -9139,6 +9151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallArt_Apt_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8152480898045812425, guid: 28452da629c654043bf2718da2d8add6, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28452da629c654043bf2718da2d8add6, type: 3}
 --- !u!1 &316463523
@@ -9343,6 +9359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Nat_05
       objectReference: {fileID: 0}
+    - target: {fileID: 6058877711084350357, guid: 4f13e2e193b7411478434edd7b149917, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f13e2e193b7411478434edd7b149917, type: 3}
 --- !u!1001 &328462964
@@ -9355,6 +9375,10 @@ PrefabInstance:
     - target: {fileID: 2640015100330053026, guid: 46bf299537dbcae4cbccff6784223305, type: 3}
       propertyPath: m_Name
       value: CoffeeMaker_Apt_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640015100330053026, guid: 46bf299537dbcae4cbccff6784223305, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 5485911931104626639, guid: 46bf299537dbcae4cbccff6784223305, type: 3}
       propertyPath: m_RootOrder
@@ -10643,6 +10667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarCabinet_Apt_02_Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1913892425049382, guid: 929be27b7388507448e23941feba1828, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 4970766601476848, guid: 929be27b7388507448e23941feba1828, type: 3}
       propertyPath: m_RootOrder
       value: 143
@@ -10756,19 +10784,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 118076602}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: updateTimer
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &371014671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11318,6 +11334,10 @@ PrefabInstance:
     - target: {fileID: 1913892425049382, guid: 929be27b7388507448e23941feba1828, type: 3}
       propertyPath: m_Name
       value: BarCabinet_Apt_02_Base (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913892425049382, guid: 929be27b7388507448e23941feba1828, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 4970766601476848, guid: 929be27b7388507448e23941feba1828, type: 3}
       propertyPath: m_RootOrder
@@ -12062,6 +12082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV_Apt_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
       propertyPath: m_VideoClip
       value: 
@@ -12420,6 +12444,10 @@ PrefabInstance:
     - target: {fileID: 6145271163491723563, guid: a104be747e53b0c4f875ab61494ff9f2, type: 3}
       propertyPath: m_Name
       value: Toaster_Apt_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145271163491723563, guid: a104be747e53b0c4f875ab61494ff9f2, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 7935108168946035685, guid: a104be747e53b0c4f875ab61494ff9f2, type: 3}
       propertyPath: m_RootOrder
@@ -14188,6 +14216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallArt_Apt_02
       objectReference: {fileID: 0}
+    - target: {fileID: 9001441060891839777, guid: 0d7e3cbd2cdf2e7428aa62ff7966b1ba, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d7e3cbd2cdf2e7428aa62ff7966b1ba, type: 3}
 --- !u!1001 &606575808
@@ -14261,6 +14293,10 @@ PrefabInstance:
     - target: {fileID: 1929367146843536, guid: 4f9e8d17d08a3d346909d5dc0f404d80, type: 3}
       propertyPath: m_Name
       value: Canvas_Painting_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929367146843536, guid: 4f9e8d17d08a3d346909d5dc0f404d80, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 4731781016042330, guid: 4f9e8d17d08a3d346909d5dc0f404d80, type: 3}
       propertyPath: m_RootOrder
@@ -14928,6 +14964,10 @@ PrefabInstance:
     - target: {fileID: 5638865034277454350, guid: e0f8fa703bcf04a419f5263f5020b059, type: 3}
       propertyPath: m_Name
       value: wine bottle 04_Low Poly
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638865034277454350, guid: e0f8fa703bcf04a419f5263f5020b059, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 5638865034277625390, guid: e0f8fa703bcf04a419f5263f5020b059, type: 3}
       propertyPath: m_RootOrder
@@ -15843,6 +15883,10 @@ PrefabInstance:
     - target: {fileID: 4327680794412319598, guid: 7699f5af06713974ba61777a8a830f6e, type: 3}
       propertyPath: m_Name
       value: Table_Computer_01_Setup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327680794412319598, guid: 7699f5af06713974ba61777a8a830f6e, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 6430890726198682700, guid: 7699f5af06713974ba61777a8a830f6e, type: 3}
       propertyPath: m_RootOrder
@@ -19340,6 +19384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Nat_06
       objectReference: {fileID: 0}
+    - target: {fileID: 4316397287083026825, guid: 0bb0235386000d5498a4c894bd92c757, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb0235386000d5498a4c894bd92c757, type: 3}
 --- !u!1001 &788550145
@@ -20957,6 +21005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrinkingGlass_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8441611114093278921, guid: 8dfa0d45cd834394f8c62eec3b88c8c4, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dfa0d45cd834394f8c62eec3b88c8c4, type: 3}
 --- !u!1 &852103448 stripped
@@ -22446,7 +22498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998527035024098072, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
       propertyPath: m_TagString
-      value: bouncePad
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 9114258171423167242, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
       propertyPath: m_RootOrder
@@ -22956,6 +23008,10 @@ PrefabInstance:
     - target: {fileID: 8671328227652953959, guid: c8efa0ebb83f8f9498202481854c76a5, type: 3}
       propertyPath: m_Name
       value: Rug_Apt_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671328227652953959, guid: c8efa0ebb83f8f9498202481854c76a5, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8efa0ebb83f8f9498202481854c76a5, type: 3}
@@ -25410,6 +25466,10 @@ PrefabInstance:
     - target: {fileID: 5262956300232747728, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
       propertyPath: m_Name
       value: Cabinet_Base_DD_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262956300232747728, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
@@ -29329,6 +29389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed_Apt_01_02
       objectReference: {fileID: 0}
+    - target: {fileID: 9189065510491252750, guid: 8af73887c9cd7fa47a2f642969b20378, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8af73887c9cd7fa47a2f642969b20378, type: 3}
 --- !u!1001 &1275877257
@@ -32333,6 +32397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa_Apt_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5781420221921499261, guid: 266d5a1d00e2ac2479b93bdd1914ad78, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266d5a1d00e2ac2479b93bdd1914ad78, type: 3}
 --- !u!1001 &1364124362
@@ -32493,6 +32561,10 @@ PrefabInstance:
     - target: {fileID: 8198272116638378021, guid: 6ab6af969cb643e44b67269676f36669, type: 3}
       propertyPath: m_Name
       value: WallArt_Apt_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198272116638378021, guid: 6ab6af969cb643e44b67269676f36669, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 8584123281821640870, guid: 6ab6af969cb643e44b67269676f36669, type: 3}
       propertyPath: m_RootOrder
@@ -33180,7 +33252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1396792389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36311,6 +36383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rug_Apt_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5871847615224283292, guid: 7b8d9613223ef1f448bbe8fc90d8a85d, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 8564915951976741474, guid: 7b8d9613223ef1f448bbe8fc90d8a85d, type: 3}
       propertyPath: m_RootOrder
       value: 230
@@ -37246,6 +37322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa_Apt_01
       objectReference: {fileID: 0}
+    - target: {fileID: 9063128926208519524, guid: d46fa1eeedbcb0e41b8c735b2594b434, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46fa1eeedbcb0e41b8c735b2594b434, type: 3}
 --- !u!4 &1559816215 stripped
@@ -37806,6 +37886,10 @@ PrefabInstance:
     - target: {fileID: 5262956300232747728, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
       propertyPath: m_Name
       value: Cabinet_Base_DD_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262956300232747728, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
@@ -38653,6 +38737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blender_Apt_01
       objectReference: {fileID: 0}
+    - target: {fileID: 3451982701686888311, guid: 8b726a9375ea2e442aa068972abf0c08, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 5532235739179982029, guid: 8b726a9375ea2e442aa068972abf0c08, type: 3}
       propertyPath: m_RootOrder
       value: 167
@@ -38896,6 +38984,10 @@ PrefabInstance:
     - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
       propertyPath: m_Name
       value: TV_Apt_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 3653056552093812707, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
       propertyPath: m_VideoClip
@@ -43838,6 +43930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bowl_Apt_01_Stacked
       objectReference: {fileID: 0}
+    - target: {fileID: 4035178881683024354, guid: 143623a82f19a9e49b450142a80c6d52, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143623a82f19a9e49b450142a80c6d52, type: 3}
 --- !u!1001 &1829170890
@@ -44484,6 +44580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Space_Cargo_Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3
@@ -44903,6 +45003,10 @@ PrefabInstance:
     - target: {fileID: 1527335154527126, guid: 14973bbaa08d142449d2405142caff8d, type: 3}
       propertyPath: m_Name
       value: wine thin glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527335154527126, guid: 14973bbaa08d142449d2405142caff8d, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 4386004159453184, guid: 14973bbaa08d142449d2405142caff8d, type: 3}
       propertyPath: m_RootOrder
@@ -47986,6 +48090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrinkingGlass_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5474188264773678998, guid: 12df49c36886f4d468acfee364eedc4c, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12df49c36886f4d468acfee364eedc4c, type: 3}
 --- !u!1 &1963003550
@@ -48071,6 +48179,10 @@ PrefabInstance:
     - target: {fileID: 2671456082134650352, guid: 2804d1473f02dbe46804e506168c85ec, type: 3}
       propertyPath: m_Name
       value: WallArt_Apt_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671456082134650352, guid: 2804d1473f02dbe46804e506168c85ec, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 7474891687684228452, guid: 2804d1473f02dbe46804e506168c85ec, type: 3}
       propertyPath: m_RootOrder
@@ -49634,6 +49746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf_Apt_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6175574215640251783, guid: 658e64758890bc24ba679c51e2cd2ab3, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     - target: {fileID: 7265477102981145203, guid: 658e64758890bc24ba679c51e2cd2ab3, type: 3}
       propertyPath: m_RootOrder
       value: 223
@@ -49829,7 +49945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998527035024098072, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
       propertyPath: m_TagString
-      value: bouncePad
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 9114258171423167242, guid: 79723f7a04c42fa4cb0fefb4f7686381, type: 3}
       propertyPath: m_RootOrder
@@ -49944,6 +50060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rug_Apt_02
       objectReference: {fileID: 0}
+    - target: {fileID: 8671328227652953959, guid: c8efa0ebb83f8f9498202481854c76a5, type: 3}
+      propertyPath: m_TagString
+      value: crate
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8efa0ebb83f8f9498202481854c76a5, type: 3}
 --- !u!4 &2029419323 stripped
@@ -50017,6 +50137,10 @@ PrefabInstance:
     - target: {fileID: 4167646210237042549, guid: e32f2e76bad645746b596640d4736354, type: 3}
       propertyPath: m_Name
       value: wine thin glass Red Wine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167646210237042549, guid: e32f2e76bad645746b596640d4736354, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e32f2e76bad645746b596640d4736354, type: 3}
@@ -50693,6 +50817,10 @@ PrefabInstance:
     - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
       propertyPath: m_Name
       value: TV_Apt_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653056551609821791, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfd0fd77c888b546907463bb2e58eca, type: 3}
@@ -61595,6 +61723,10 @@ PrefabInstance:
     - target: {fileID: 5871847615224283292, guid: 7b8d9613223ef1f448bbe8fc90d8a85d, type: 3}
       propertyPath: m_Name
       value: Rug_Apt_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871847615224283292, guid: 7b8d9613223ef1f448bbe8fc90d8a85d, type: 3}
+      propertyPath: m_TagString
+      value: crate
       objectReference: {fileID: 0}
     - target: {fileID: 8564915951976741474, guid: 7b8d9613223ef1f448bbe8fc90d8a85d, type: 3}
       propertyPath: m_RootOrder

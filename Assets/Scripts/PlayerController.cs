@@ -106,6 +106,8 @@ public class PlayerController : MonoBehaviour
     {
         //COMMENT THIS if we want one wall run per ground touch
         canwallrun = true;
+        progress.maxValue = sobriety;
+        progress.value = timeToWithdrawal;
         if(ending == true)
         {
             timeEnd += Time.deltaTime;
@@ -328,6 +330,7 @@ public class PlayerController : MonoBehaviour
                 {
                     blur.Multiplier += .005f;
                     bluricon.gameObject.SetActive(true);
+                    blurScreen.gameObject.SetActive(true);
                     //doneWithdrawalEffects = true;
                 }
             }
