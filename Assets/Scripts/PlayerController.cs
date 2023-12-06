@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         }
         if (timeEnd3 > 5)
         {
-            SceneManager.LoadScene(sceneBuildIndex: 0);
+            SceneManager.LoadScene(sceneBuildIndex: 13);
         }
 
 
